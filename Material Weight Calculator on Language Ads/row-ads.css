@@ -1,0 +1,399 @@
+/* ==========================================================================
+   MATERIAL WEIGHT CALCULATOR — ADVERTISEMENT CARD STYLES
+   --------------------------------------------------------------------------
+   One card for every advertisement, in every language and on every page.
+   It uses the same .card shell as "Material Grades and Applications", so its
+   width and alignment always match the page content.
+
+   LAYOUT IS CHOSEN BY THE CREATIVE'S OWN PROPORTIONS
+     .mw-row-ad--banner     wide banner  -> image across the top, text under it
+     .mw-row-ad--landscape  16:9-ish     -> image left (~46%), text right
+     .mw-row-ad--square     1:1-ish      -> image left (~42%), text right
+     .mw-row-ad--portrait   tall image   -> narrow image left (~34%), text right
+
+   The media box copies the image's aspect ratio (--mw-ad-ar), so the image
+   fills its frame edge to edge instead of floating in an empty box, and
+   object-fit: contain guarantees it is never stretched or cropped. A single
+   absolute link (.mw-row-ad__hit) makes the whole card clickable without
+   nesting anchors.
+
+   Publish an advertisement by editing its Row file — never this stylesheet.
+   ========================================================================== */
+
+.mw-row-ad.card {
+    position: relative;
+    width: 100%;
+    max-width: none;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid var(--border, #e0e8e9);
+    border-radius: 13px;
+    background: #fff;
+    transition: border-color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
+}
+
+/* Desktop hover: the whole card is one link, so the whole card reacts. */
+@media (hover: hover) and (pointer: fine) {
+    .mw-row-ad.card:hover {
+        border-color: #bcdcd9;
+        box-shadow: 0 8px 22px rgba(6, 99, 95, 0.11);
+        transform: translateY(-1px);
+    }
+}
+
+/* Keyboard focus lands on the full-card link and highlights the card. */
+.mw-row-ad.card:focus-within {
+    border-color: var(--primary, #087f7b);
+    box-shadow: 0 0 0 3px rgba(8, 127, 123, 0.18);
+}
+
+/* --------------------------------------------------------------------------
+   Green ribbon header — same green family as the Calculate Weight button.
+   -------------------------------------------------------------------------- */
+.mw-row-ad__ribbon {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 16px;
+    background: linear-gradient(100deg, #0b918a 0%, #087f7b 58%, #066863 100%);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+.mw-row-ad__ribbon-mark {
+    flex: 0 0 auto;
+    width: 8px;
+    height: 8px;
+    border: 1.5px solid rgba(255, 255, 255, 0.9);
+    border-radius: 2px;
+    transform: rotate(45deg);
+}
+
+.mw-row-ad__ribbon-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* --------------------------------------------------------------------------
+   Body — image column + information column.
+   -------------------------------------------------------------------------- */
+.mw-row-ad__body {
+    display: grid;
+    grid-template-columns: minmax(0, 46%) minmax(0, 54%);
+    align-items: center;
+    gap: 18px;
+    padding: 15px 16px 16px;
+}
+
+.mw-row-ad--square .mw-row-ad__body {
+    grid-template-columns: minmax(0, 42%) minmax(0, 58%);
+}
+
+.mw-row-ad--portrait .mw-row-ad__body {
+    grid-template-columns: minmax(0, 34%) minmax(0, 66%);
+}
+
+.mw-row-ad--banner .mw-row-ad__body {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 13px;
+    align-items: stretch;
+}
+
+/* The frame copies the creative's own ratio, so the image fills it. */
+.mw-row-ad__media {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    aspect-ratio: var(--mw-ad-ar, 728 / 90);
+    max-height: 320px;
+    align-self: center;
+    overflow: hidden;
+    border: 1px solid var(--border, #e0e8e9);
+    border-radius: 10px;
+    background: #f3f8f8;
+}
+
+.mw-row-ad--banner .mw-row-ad__media {
+    max-height: 290px;
+}
+
+/* A tall poster keeps its own shape, but its width is derived from the capped
+   height (never a fixed frame), so it fills the space without letterboxing
+   and the card stays close to the height of Material Grades. */
+.mw-row-ad--portrait .mw-row-ad__media {
+    max-height: 300px;
+    max-width: calc(300px * var(--mw-ad-ratio, 0.67));
+}
+
+/* Never stretched, never cropped: the frame already has the image ratio, so
+   "contain" simply fills it. object-position keeps the centre visible if a
+   cap ever applies. */
+.mw-row-ad__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+/* Kept for Row files that still ask for the old displayMode: "cover". */
+.mw-row-ad.is-cover .mw-row-ad__image {
+    object-fit: cover;
+}
+
+/* --------------------------------------------------------------------------
+   Information
+   -------------------------------------------------------------------------- */
+.mw-row-ad__info {
+    min-width: 0;
+    max-width: 100%;
+}
+
+.mw-row-ad__info > *:last-child {
+    margin-bottom: 0;
+}
+
+.mw-row-ad__business,
+.mw-row-ad__title,
+.mw-row-ad__description,
+.mw-row-ad__business-info {
+    overflow-wrap: anywhere;
+}
+
+.mw-row-ad__title,
+.mw-row-ad__description {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.mw-row-ad__title {
+    -webkit-line-clamp: 2;
+}
+
+.mw-row-ad__description {
+    -webkit-line-clamp: 4;
+}
+
+.mw-row-ad__business {
+    display: block;
+    margin-bottom: 3px;
+    color: var(--primary, #087f7b);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+}
+
+.mw-row-ad__title {
+    margin: 0 0 5px;
+    color: var(--text, #182b32);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.mw-row-ad__description {
+    margin: 0 0 8px;
+    color: #3d5560;
+    font-size: 13px;
+    line-height: 1.55;
+}
+
+/* Optional advertiser details: only rendered when supplied. */
+.mw-row-ad__business-info {
+    margin: 0 0 5px;
+    color: var(--muted, #718087);
+    font-size: 12px;
+    line-height: 1.45;
+}
+
+.mw-row-ad__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 16px;
+    margin: 0 0 11px;
+    color: var(--muted, #718087);
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+/* Above the full-card link, so a phone number stays reachable. */
+.mw-row-ad__meta-item {
+    position: relative;
+    z-index: 3;
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    min-width: 0;
+    max-width: 100%;
+}
+
+.mw-row-ad__meta-label {
+    font-weight: 700;
+}
+
+.mw-row-ad__meta-link {
+    min-width: 0;
+    max-width: 100%;
+    color: var(--primary-dark, var(--primary, #05635f));
+    overflow-wrap: anywhere;
+    text-decoration: none;
+}
+
+.mw-row-ad__meta-link:hover {
+    text-decoration: underline;
+}
+
+/* --------------------------------------------------------------------------
+   Call to action — a span, because the whole card is already one link.
+   -------------------------------------------------------------------------- */
+.mw-row-ad__cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    max-width: 100%;
+    min-height: 38px;
+    padding: 10px 20px;
+    border-radius: 9px;
+    background: linear-gradient(180deg, #0a8a84, #077571);
+    color: #fff;
+    font-size: 12.5px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    line-height: 1.2;
+    text-align: center;
+    text-transform: uppercase;
+    box-shadow: 0 2px 6px rgba(6, 99, 95, 0.22);
+    transition: background 0.18s ease, box-shadow 0.18s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .mw-row-ad.card:hover .mw-row-ad__cta {
+        background: linear-gradient(180deg, #099b94, #06807b);
+        box-shadow: 0 4px 12px rgba(6, 99, 95, 0.28);
+    }
+}
+
+/* --------------------------------------------------------------------------
+   The single full-card link. It sits above the content, so clicking the
+   image, the description, the ribbon or the button all open the same
+   destination. Nothing is nested inside another link.
+   -------------------------------------------------------------------------- */
+.mw-row-ad__hit {
+    position: absolute;
+    z-index: 2;
+    inset: 0;
+    display: block;
+    border-radius: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.mw-row-ad__hit:focus-visible {
+    outline: none;
+}
+
+/* --------------------------------------------------------------------------
+   Tablets
+   -------------------------------------------------------------------------- */
+@media (max-width: 900px) {
+    .mw-row-ad__body {
+        gap: 14px;
+        padding: 14px 15px 15px;
+    }
+
+    .mw-row-ad__media {
+        max-height: 270px;
+    }
+
+    .mw-row-ad--portrait .mw-row-ad__media {
+        max-height: 280px;
+        max-width: calc(280px * var(--mw-ad-ratio, 0.67));
+    }
+
+    .mw-row-ad__title {
+        font-size: 15px;
+    }
+
+    .mw-row-ad__description {
+        font-size: 12.5px;
+        -webkit-line-clamp: 3;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   Phones — one column: ribbon, image, then the text and the button.
+   -------------------------------------------------------------------------- */
+@media (max-width: 640px) {
+    .mw-row-ad__body,
+    .mw-row-ad--square .mw-row-ad__body,
+    .mw-row-ad--portrait .mw-row-ad__body,
+    .mw-row-ad--banner .mw-row-ad__body {
+        display: block;
+        padding: 12px 13px 13px;
+    }
+
+    .mw-row-ad__media,
+    .mw-row-ad--banner .mw-row-ad__media {
+        max-height: 260px;
+        max-width: 100%;
+        margin-bottom: 11px;
+    }
+
+    /* On phones a portrait creative may use the full width and stay tall, but
+       its frame keeps the image's own ratio so nothing is letterboxed. */
+    .mw-row-ad--portrait .mw-row-ad__media {
+        max-height: 420px;
+        max-width: calc(420px * var(--mw-ad-ratio, 0.67));
+        margin: 0 auto 11px;
+    }
+
+    .mw-row-ad__ribbon {
+        padding: 8px 13px;
+        font-size: 9.5px;
+        letter-spacing: 0.14em;
+    }
+
+    .mw-row-ad__title {
+        margin-bottom: 4px;
+        font-size: 15px;
+    }
+
+    .mw-row-ad__description {
+        margin-bottom: 7px;
+        font-size: 12.5px;
+        line-height: 1.5;
+        -webkit-line-clamp: 4;
+    }
+
+    .mw-row-ad__meta {
+        gap: 3px 12px;
+        margin-bottom: 9px;
+    }
+
+    .mw-row-ad__cta {
+        width: 100%;
+        min-height: 38px;
+    }
+}
+
+@media (max-width: 380px) {
+    .mw-row-ad__description {
+        -webkit-line-clamp: 3;
+    }
+}
+
+@media print {
+    .mw-row-ad {
+        display: none;
+    }
+}

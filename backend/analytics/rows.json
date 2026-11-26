@@ -1,0 +1,137 @@
+{
+  "note": "Generated from Material Weight Calculator on Language Ads/row-ads.config.js.",
+  "rows": [
+    {
+      "id": "a-row",
+      "title": "A-Row",
+      "calculators": [
+        {
+          "id": "plate",
+          "name": "Plate"
+        },
+        {
+          "id": "c-channel",
+          "name": "C Channel"
+        },
+        {
+          "id": "round-bar",
+          "name": "Solid Round Bar"
+        },
+        {
+          "id": "square-bar",
+          "name": "Square Bar"
+        }
+      ]
+    },
+    {
+      "id": "b-row",
+      "title": "B-Row",
+      "calculators": [
+        {
+          "id": "circular-plate",
+          "name": "Circular Plate"
+        },
+        {
+          "id": "e-section",
+          "name": "E-Section"
+        },
+        {
+          "id": "round-bar-with-hexagonal-hole",
+          "name": "Round Bar with Hexagonal Hole"
+        },
+        {
+          "id": "triangular-bar",
+          "name": "Triangular Bar"
+        }
+      ]
+    },
+    {
+      "id": "c-row",
+      "title": "C-Row",
+      "calculators": [
+        {
+          "id": "flange-plate",
+          "name": "Flange Plate Weight Calculator"
+        },
+        {
+          "id": "t-channel",
+          "name": "T Channel"
+        },
+        {
+          "id": "trapezium-bar",
+          "name": "Trapezium Bar"
+        },
+        {
+          "id": "hexagonal-bar-with-round-hole",
+          "name": "Hexagonal Bar with Round Hole"
+        }
+      ]
+    },
+    {
+      "id": "d-row",
+      "title": "D-Row",
+      "calculators": [
+        {
+          "id": "sphere-ball",
+          "name": "Sphere / Ball"
+        },
+        {
+          "id": "pipe",
+          "name": "Pipe"
+        },
+        {
+          "id": "trapezoidal-bar",
+          "name": "Trapezoidal Bar"
+        },
+        {
+          "id": "solid-cone",
+          "name": "Solid Cone"
+        }
+      ]
+    },
+    {
+      "id": "e-row",
+      "title": "E-Row",
+      "calculators": [
+        {
+          "id": "l-channel",
+          "name": "L Channel"
+        },
+        {
+          "id": "shell",
+          "name": "Shell"
+        },
+        {
+          "id": "box-channel",
+          "name": "Box Channel"
+        },
+        {
+          "id": "truncated-cone",
+          "name": "Truncated Cone (Conical Reducer)"
+        }
+      ]
+    },
+    {
+      "id": "f-row",
+      "title": "F-Row",
+      "calculators": [
+        {
+          "id": "i-channel",
+          "name": "I Channel"
+        },
+        {
+          "id": "dish-ends",
+          "name": "Dish Ends Calculator"
+        },
+        {
+          "id": "hexagon-bar",
+          "name": "Hexagon Bar"
+        },
+        {
+          "id": "nut-bolt",
+          "name": "Nut & Bolt Weight Calculator"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,620 @@
+{
+  "box-channel": {
+    "title": "Calculadora de Peso de Perfil Caixa | Calculadora de Peso de Metais",
+    "description": "Calcule o peso de um perfil tubular retangular oco a partir da largura exterior, da altura exterior, da espessura da parede, do comprimento e da densidade do material.",
+    "h1": "Calculadora de Peso de Perfil Caixa",
+    "strings": {
+      "Box Channel Weight Calculator": "Calculadora de Peso de Perfil Caixa",
+      "Box Channel Weight Calculator | Metal Weight Calculator": "Calculadora de Peso de Perfil Caixa | Calculadora de Peso de Metais",
+      "Box Section Dimensions": "Dimensões do perfil caixa",
+      "box channel front and side engineering views": "vistas frontal e lateral de engenharia do perfil caixa",
+      "Box channel front view showing outside width B, outside height H and wall thickness T": "Vista frontal do perfil caixa com largura exterior B, altura exterior H e espessura da parede T",
+      "Box channel side view showing the full length L as a 2D orthographic side elevation with continuous outer wall edges and hidden inner wall thickness boundaries": "Vista lateral do perfil caixa com o comprimento total L como elevação lateral ortográfica 2D, com arestas contínuas da parede exterior e limites ocultos da espessura da parede interior",
+      "Outer Width (B)": "Largura exterior (B)",
+      "Enter outer width": "Introduza a largura exterior",
+      "Outer Height (H)": "Altura exterior (H)",
+      "Enter outer height": "Introduza a altura exterior",
+      "Wall Thickness (T)": "Espessura da parede (T)",
+      "Enter wall thickness": "Introduza a espessura da parede",
+      "Length (L)": "Comprimento (L)",
+      "Enter length": "Introduza o comprimento",
+      "Carbon Steel": "Aço ao carbono",
+      "Stainless Steel": "Aço inoxidável",
+      "Aluminium": "Alumínio",
+      "Brass": "Latão",
+      "Bronze": "Bronze",
+      "Cast Iron": "Ferro fundido",
+      "Copper": "Cobre",
+      "Zinc": "Zinco",
+      "Lead": "Chumbo",
+      "Tin": "Estanho",
+      "Titanium": "Titânio",
+      "Nickel": "Níquel",
+      "Magnesium": "Magnésio",
+      "Inconel 625": "Inconel 625",
+      "Monel 400": "Monel 400",
+      "Carbon Steel — 7.85 g/cm³": "Aço ao carbono — 7,85 g/cm³",
+      "0.00 kg": "0,00 kg",
+      "0.000 kg": "0,000 kg",
+      "0.00000000 m³": "0,00000000 m³",
+      "1 pc": "1 peça",
+      "7.85 g/cm³": "7,85 g/cm³",
+      "Single Box Weight": "Peso por peça",
+      "Volume Per Item": "Volume por peça",
+      "W = [B &times; H &minus; (B &minus; 2T) &times; (H &minus; 2T)] &times; L &times; &rho; &divide; 10&#8310;": "W = [B &times; H &minus; (B &minus; 2T) &times; (H &minus; 2T)] &times; L &times; &rho; &divide; 10&#8310;",
+      "W = Weight (kg) &middot; B = Outer width (mm) &middot; H = Outer height (mm) &middot; T = Wall thickness (mm) &middot; L = Length (mm) &middot; &rho; = Density (g/cm&sup3;)": "W = Peso (kg) &middot; B = Largura exterior (mm) &middot; H = Altura exterior (mm) &middot; T = Espessura da parede (mm) &middot; L = Comprimento (mm) &middot; &rho; = Densidade (g/cm&sup3;)",
+      "How to Calculate (Step-by-Step)": "Como calcular (passo a passo)",
+      "Carbon Steel Box Section": "Perfil caixa em aço ao carbono",
+      "Convert B, H, T, and L to millimetres (mm) if entered in inches.": "Converta B, H, T e L para milímetros (mm) caso tenham sido introduzidos em polegadas.",
+      "Calculate inner dimensions: B<sub>in</sub> = B &minus; 2T, H<sub>in</sub> = H &minus; 2T (mm).": "Calcule as dimensões interiores: B<sub>in</sub> = B &minus; 2T, H<sub>in</sub> = H &minus; 2T (mm).",
+      "Calculate cross-sectional metal area: Area = B&times;H &minus; B<sub>in</sub>&times;H<sub>in</sub> (mm&sup2;).": "Calcule a área metálica da secção transversal: Área = B&times;H &minus; B<sub>in</sub>&times;H<sub>in</sub> (mm&sup2;).",
+      "Calculate weight: W = Area &times; L &times; &rho; &divide; 1,000,000 (kg).": "Calcule o peso: W = Área &times; L &times; &rho; &divide; 1.000.000 (kg).",
+      "Multiply by quantity for total weight.": "Multiplique pela quantidade para obter o peso total.",
+      "<strong>Variables:</strong> B and H are outside dimensions, T is uniform wall thickness, L is length, and &rho; is density. Valid when 2T &lt; B and 2T &lt; H.": "<strong>Variáveis:</strong> B e H são as dimensões exteriores, T é a espessura uniforme da parede, L é o comprimento e &rho; é a densidade. Válido quando 2T &lt; B e 2T &lt; H.",
+      "<strong>Assumptions/limitations:</strong> Assumes a rectangular hollow box section with uniform wall thickness and sharp corners. Actual RHS/SHS sections may have corner radii and tolerances affecting weight.": "<strong>Suposições/limitações:</strong> Considera uma secção caixa retangular oca com espessura de parede uniforme e cantos vivos. Secções RHS/SHS reais podem ter raios nos cantos e tolerâncias que afetam o peso.",
+      "Material Density (&rho;)": "Densidade do material (&rho;)",
+      "Calculation": "Cálculo",
+      "W = [60&times;40 &minus; (60 &minus; 6)&times;(40 &minus; 6)] &times; 1000 &times; <span class=\"example-density-term\">7.85</span> &divide; 10&#8310;": "W = [60&times;40 &minus; (60 &minus; 6)&times;(40 &minus; 6)] &times; 1000 &times; <span class=\"example-density-term\">7,85</span> &divide; 10&#8310;",
+      "<span class=\"example-density-icon\" aria-hidden=\"true\">&times;</span> Area = 2400 &minus; 1836 = 564 mm&sup2;; weight &approx; 4.427 kg/m.": "<span class=\"example-density-icon\" aria-hidden=\"true\">&times;</span> Área = 2400 &minus; 1836 = 564 mm&sup2;; peso &approx; 4,427 kg/m.",
+      "Weight =": "Peso =",
+      "4.427 kg": "4,427 kg",
+      "Current category: Structural Sections": "Categoria atual: Perfis estruturais",
+      "Truncated Cone": "Cone truncado",
+      "Pipe": "Tubo",
+      "Hollow / Tube Sections": "Perfis ocos / tubulares",
+      "C Channel": "Perfil C",
+      "E-Section": "Perfil E",
+      "I Channel": "Perfil I",
+      "L Channel": "Perfil L",
+      "Structural Sections": "Perfis estruturais",
+      "Hexagon Bar": "Barra hexagonal",
+      "Solid Bars": "Barras maciças"
+    },
+    "faqs": [
+      {
+        "q": "Que massa por metro resulta de um perfil caixa 80 × 40 × 4 mm em aço ao carbono?",
+        "a": "A área metálica é 80 × 40 − 72 × 32 = 896 mm². Com 7,85 g/cm³, o peso linear é 896 × 1.000 × 7,85 ÷ 1.000.000 = 7,03 kg/m."
+      },
+      {
+        "q": "Como obter o peso de uma barra de 6 m a partir do peso por metro?",
+        "a": "Basta multiplicar o valor linear pelo comprimento. Para o perfil 60 × 40 × 3 mm, 4,427 kg/m × 6 m = 26,56 kg por barra; com 20 barras o total é 531,3 kg, ou 0,531 t."
+      },
+      {
+        "q": "Posso introduzir as dimensões em polegadas e continuar a ler o resultado em quilogramas?",
+        "a": "Sim. Ao comutar a unidade, todos os valores são convertidos com 1 in = 25,4 mm antes do cálculo; a densidade mantém-se em g/cm³ e o resultado continua em kg."
+      },
+      {
+        "q": "A espessura nominal da parede é suficiente para estimar a massa de entrega?",
+        "a": "Para uma estimativa, sim. Em perfis laminados ou soldados conforme EN 10219, a tolerância de espessura e os raios dos cantos fazem com que o peso real difira alguns pontos percentuais do valor teórico."
+      },
+      {
+        "q": "O mesmo cálculo serve para um perfil quadrado 50 × 50 × 3 mm?",
+        "a": "Serve: basta igualar B e H. A área é 50 × 50 − 44 × 44 = 564 mm², o que dá 4,43 kg/m em aço ao carbono."
+      },
+      {
+        "q": "Quanto pesa o mesmo perfil 60 × 40 × 3 mm em alumínio?",
+        "a": "Com 2,70 g/cm³, a área de 564 mm² dá 564 × 1.000 × 2,70 ÷ 1.000.000 = 1,52 kg/m, cerca de um terço do valor do aço."
+      },
+      {
+        "q": "O que acontece se a espessura da parede atingir metade da largura?",
+        "a": "O vão interior desaparece e a expressão do perfil oco deixa de ser aplicável; nesse caso a secção comporta-se como uma barra maciça e deve ser calculada como tal."
+      }
+    ]
+  },
+  "c-channel": {
+    "title": "Calculadora de Peso de Perfil C | Calculadora de Peso de Metais",
+    "description": "Calcule o peso de um perfil C a partir da altura total, da largura da flange, das espessuras da alma e da flange, do comprimento e da densidade do material.",
+    "h1": "Calculadora de Peso de Perfil C",
+    "strings": {
+      "C Channel Weight Calculator": "Calculadora de Peso de Perfil C",
+      "C Channel Weight Calculator | Metal Weight Calculator": "Calculadora de Peso de Perfil C | Calculadora de Peso de Metais",
+      "Channel Dimensions": "Dimensões do perfil",
+      "c channel front and side engineering views": "vistas frontal e lateral de engenharia do perfil C",
+      "C channel front view showing height H, flange width B, web thickness Tw and flange thickness Tf": "Vista frontal do perfil C com altura H, largura da flange B, espessura da alma Tw e espessura da flange Tf",
+      "C channel side view showing the full length L as a 2D orthographic side elevation with continuous top and bottom flange edges and flange thickness boundaries": "Vista lateral do perfil C com o comprimento total L como elevação lateral ortográfica 2D, com arestas contínuas das flanges superior e inferior e limites de espessura das flanges",
+      "Flange Width (B)": "Largura da flange (B)",
+      "Enter flange width": "Introduza a largura da flange",
+      "Overall Height (H)": "Altura total (H)",
+      "Enter overall height": "Introduza a altura total",
+      "Flange Thickness (Tf)": "Espessura da flange (Tf)",
+      "Flange Thickness (T<sub>f</sub>)": "Espessura da flange (T<sub>f</sub>)",
+      "Enter flange thickness": "Introduza a espessura da flange",
+      "Web Thickness (Tw)": "Espessura da alma (Tw)",
+      "Web Thickness (T<sub>w</sub>)": "Espessura da alma (T<sub>w</sub>)",
+      "Enter web thickness": "Introduza a espessura da alma",
+      "Length (L)": "Comprimento (L)",
+      "Enter length": "Introduza o comprimento",
+      "Carbon Steel": "Aço ao carbono",
+      "Stainless Steel": "Aço inoxidável",
+      "Aluminium": "Alumínio",
+      "Brass": "Latão",
+      "Bronze": "Bronze",
+      "Cast Iron": "Ferro fundido",
+      "Copper": "Cobre",
+      "Zinc": "Zinco",
+      "Lead": "Chumbo",
+      "Tin": "Estanho",
+      "Titanium": "Titânio",
+      "Nickel": "Níquel",
+      "Magnesium": "Magnésio",
+      "Inconel 625": "Inconel 625",
+      "Monel 400": "Monel 400",
+      "Carbon Steel — 7.85 g/cm³": "Aço ao carbono — 7,85 g/cm³",
+      "0.00 kg": "0,00 kg",
+      "0.000 kg": "0,000 kg",
+      "0.00000000 m³": "0,00000000 m³",
+      "1 pc": "1 peça",
+      "7.85 g/cm³": "7,85 g/cm³",
+      "Single Channel Weight": "Peso por peça",
+      "Volume Per Item": "Volume por peça",
+      "W = [H &times; T<sub>w</sub> + 2 &times; (B &minus; T<sub>w</sub>) &times; T<sub>f</sub>] &times; L &times; &rho; &divide; 10&#8310;": "W = [H &times; T<sub>w</sub> + 2 &times; (B &minus; T<sub>w</sub>) &times; T<sub>f</sub>] &times; L &times; &rho; &divide; 10&#8310;",
+      "W = Weight (kg) &middot; B = Flange width (mm) &middot; H = Overall height (mm) &middot; T<sub>f</sub> = Flange thickness (mm) &middot; T<sub>w</sub> = Web thickness (mm) &middot; L = Length (mm) &middot; &rho; = Density (g/cm&sup3;)": "W = Peso (kg) &middot; B = Largura da flange (mm) &middot; H = Altura total (mm) &middot; T<sub>f</sub> = Espessura da flange (mm) &middot; T<sub>w</sub> = Espessura da alma (mm) &middot; L = Comprimento (mm) &middot; &rho; = Densidade (g/cm&sup3;)",
+      "How to Calculate (Step-by-Step)": "Como calcular (passo a passo)",
+      "Carbon Steel C Channel": "Perfil C em aço ao carbono",
+      "Convert B, H, T<sub>f</sub>, T<sub>w</sub>, and L to millimetres (mm) if entered in inches.": "Converta B, H, T<sub>f</sub>, T<sub>w</sub> e L para milímetros (mm) caso tenham sido introduzidos em polegadas.",
+      "Calculate cross-sectional area: Area = H&times;T<sub>w</sub> + 2&times;(B &minus; T<sub>w</sub>)&times;T<sub>f</sub> (mm&sup2;).": "Calcule a área da secção transversal: Área = H&times;T<sub>w</sub> + 2&times;(B &minus; T<sub>w</sub>)&times;T<sub>f</sub> (mm&sup2;).",
+      "Calculate volume: V = Area &times; L (mm&sup3;).": "Calcule o volume: V = Área &times; L (mm&sup3;).",
+      "Calculate weight: W = V &times; &rho; &divide; 1,000,000 (kg).": "Calcule o peso: W = V &times; &rho; &divide; 1.000.000 (kg).",
+      "Multiply by quantity for total weight.": "Multiplique pela quantidade para obter o peso total.",
+      "<strong>Variables:</strong> B is flange width, H overall channel height, T<sub>f</sub> flange thickness, T<sub>w</sub> web thickness, L length, &rho; density. Assumes web runs full height and flanges project from web.": "<strong>Variáveis:</strong> B é a largura da flange, H a altura total do perfil, T<sub>f</sub> a espessura da flange, T<sub>w</sub> a espessura da alma, L o comprimento e &rho; a densidade. Considera a alma ao longo de toda a altura e as flanges a projetarem-se a partir dela.",
+      "<strong>Assumptions/limitations:</strong> Theoretical C-channel geometry with sharp corners and uniform thicknesses; web taken through full height. Actual rolled channels may differ due to radii, tapers, and standard tolerances.": "<strong>Suposições/limitações:</strong> Geometria teórica de perfil C com cantos vivos e espessuras uniformes; a alma é considerada em toda a altura. Perfis laminados reais podem diferir devido a raios, conicidades e tolerâncias normais.",
+      "Material Density (&rho;)": "Densidade do material (&rho;)",
+      "Calculation": "Cálculo",
+      "W = [100&times;5 + 2&times;(50 &minus; 5)&times;8] &times; 1000 &times; <span class=\"example-density-term\">7.85</span> &divide; 10&#8310;": "W = [100&times;5 + 2&times;(50 &minus; 5)&times;8] &times; 1000 &times; <span class=\"example-density-term\">7,85</span> &divide; 10&#8310;",
+      "<span class=\"example-density-icon\" aria-hidden=\"true\">&times;</span> Area = 500 + 720 = 1220 mm&sup2;; weight &approx; 9.577 kg/m.": "<span class=\"example-density-icon\" aria-hidden=\"true\">&times;</span> Área = 500 + 720 = 1220 mm&sup2;; peso &approx; 9,577 kg/m.",
+      "Weight =": "Peso =",
+      "9.577 kg": "9,577 kg",
+      "Current category: Structural Sections": "Categoria atual: Perfis estruturais",
+      "I Channel": "Perfil I",
+      "L Channel": "Perfil L",
+      "Box Channel": "Perfil caixa",
+      "E-Section": "Perfil E",
+      "T Channel": "Perfil T",
+      "Hexagon Bar": "Barra hexagonal",
+      "Structural Sections": "Perfis estruturais",
+      "Solid Bars": "Barras maciças"
+    },
+    "faqs": [
+      {
+        "q": "Qual é o peso linear de um canal com H = 80 mm, B = 45 mm, alma de 5 mm e abas de 8 mm?",
+        "a": "A área é 80 × 5 + 2 × (45 − 5) × 8 = 1.040 mm². Em aço ao carbono resultam 1.040 × 1.000 × 7,85 ÷ 1.000.000 = 8,16 kg/m."
+      },
+      {
+        "q": "Por que razão se deduz Tw da largura da flange?",
+        "a": "Porque B mede a largura total do canal e a alma ocupa já uma faixa de espessura Tw no topo e na base. Subtraindo essa faixa em cada aba evita contar duas vezes o mesmo aço."
+      },
+      {
+        "q": "Que massa tem um canal 100 × 50 × 5/8 com 4,5 m de comprimento?",
+        "a": "A secção tem 1.220 mm², ou 9,577 kg/m. Em 4,5 m totalizam 43,1 kg; basta introduzir 4.500 mm no campo comprimento."
+      },
+      {
+        "q": "Quanto aumenta o peso se o canal for em inox 304 com densidade 8,0 g/cm³?",
+        "a": "A geometria não muda: 1.220 mm² × 8,0 dão 9,76 kg/m, cerca de 1,9% acima dos 9,577 kg/m do aço ao carbono."
+      },
+      {
+        "q": "E em alumínio 6061 com 2,70 g/cm³?",
+        "a": "Pela mesma área de 1.220 mm² obtêm-se 3,29 kg/m. A diferença está apenas no termo de densidade."
+      },
+      {
+        "q": "A tabela do laminador indica um peso superior ao calculado. Porquê?",
+        "a": "Os canais laminados têm raiz arredondada entre alma e abas e, em muitos perfis, abas ligeiramente convergentes. O modelo aqui é de cantos vivos e espessura constante, pelo que a tabela costuma ser um pouco maior."
+      },
+      {
+        "q": "Como somar a massa de 12 barras de 6 m?",
+        "a": "Cada barra de 9,577 kg/m pesa 57,46 kg; 12 barras totalizam 689,5 kg, ou cerca de 0,690 t. Utilize o campo quantidade para obter diretamente esse valor."
+      }
+    ]
+  },
+  "i-channel": {
+    "title": "Calculadora de Peso de Perfil I | Calculadora de Peso de Metais",
+    "description": "Calcule o peso de um perfil I a partir da altura total, da largura da flange, das espessuras da alma e da flange, do comprimento e da densidade do material.",
+    "h1": "Calculadora de Peso de Perfil I",
+    "strings": {
+      "I Channel Weight Calculator": "Calculadora de Peso de Perfil I",
+      "I Channel Weight Calculator | Metal Weight Calculator": "Calculadora de Peso de Perfil I | Calculadora de Peso de Metais",
+      "Channel Dimensions": "Dimensões do perfil",
+      "i channel front and side engineering views": "vistas frontal e lateral de engenharia do perfil I",
+      "I channel front view showing height H, flange width B, web thickness Tw and flange thickness Tf": "Vista frontal do perfil I com altura H, largura da flange B, espessura da alma Tw e espessura da flange Tf",
+      "I channel side view showing the full length L as a 2D orthographic side elevation with continuous top and bottom flange edges and flange thickness boundaries": "Vista lateral do perfil I com o comprimento total L como elevação lateral ortográfica 2D, com arestas contínuas das flanges superior e inferior e limites de espessura das flanges",
+      "Flange Width (B)": "Largura da flange (B)",
+      "Enter flange width": "Introduza a largura da flange",
+      "Overall Height (H)": "Altura total (H)",
+      "Enter overall height": "Introduza a altura total",
+      "Flange Thickness (Tf)": "Espessura da flange (Tf)",
+      "Flange Thickness (T<sub>f</sub>)": "Espessura da flange (T<sub>f</sub>)",
+      "Enter flange thickness": "Introduza a espessura da flange",
+      "Web Thickness (Tw)": "Espessura da alma (Tw)",
+      "Web Thickness (T<sub>w</sub>)": "Espessura da alma (T<sub>w</sub>)",
+      "Enter web thickness": "Introduza a espessura da alma",
+      "Length (L)": "Comprimento (L)",
+      "Enter length": "Introduza o comprimento",
+      "Carbon Steel": "Aço ao carbono",
+      "Stainless Steel": "Aço inoxidável",
+      "Aluminium": "Alumínio",
+      "Brass": "Latão",
+      "Bronze": "Bronze",
+      "Cast Iron": "Ferro fundido",
+      "Copper": "Cobre",
+      "Zinc": "Zinco",
+      "Lead": "Chumbo",
+      "Tin": "Estanho",
+      "Titanium": "Titânio",
+      "Nickel": "Níquel",
+      "Magnesium": "Magnésio",
+      "Inconel 625": "Inconel 625",
+      "Monel 400": "Monel 400",
+      "Carbon Steel — 7.85 g/cm³": "Aço ao carbono — 7,85 g/cm³",
+      "0.00 kg": "0,00 kg",
+      "0.000 kg": "0,000 kg",
+      "0.00000000 m³": "0,00000000 m³",
+      "1 pc": "1 peça",
+      "7.85 g/cm³": "7,85 g/cm³",
+      "Single Channel Weight": "Peso por peça",
+      "Volume Per Item": "Volume por peça",
+      "W = [2 &times; B &times; T<sub>f</sub> + (H &minus; 2T<sub>f</sub>) &times; T<sub>w</sub>] &times; L &times; &rho; &divide; 10&#8310;": "W = [2 &times; B &times; T<sub>f</sub> + (H &minus; 2T<sub>f</sub>) &times; T<sub>w</sub>] &times; L &times; &rho; &divide; 10&#8310;",
+      "W = Weight (kg) &middot; B = Flange width (mm) &middot; H = Overall height (mm) &middot; T<sub>f</sub> = Flange thickness (mm) &middot; T<sub>w</sub> = Web thickness (mm) &middot; L = Length (mm) &middot; &rho; = Density (g/cm&sup3;)": "W = Peso (kg) &middot; B = Largura da flange (mm) &middot; H = Altura total (mm) &middot; T<sub>f</sub> = Espessura da flange (mm) &middot; T<sub>w</sub> = Espessura da alma (mm) &middot; L = Comprimento (mm) &middot; &rho; = Densidade (g/cm&sup3;)",
+      "How to Calculate (Step-by-Step)": "Como calcular (passo a passo)",
+      "Carbon Steel I Section": "Perfil I em aço ao carbono",
+      "Convert B, H, T<sub>f</sub>, T<sub>w</sub>, and L to millimetres (mm) if entered in inches.": "Converta B, H, T<sub>f</sub>, T<sub>w</sub> e L para milímetros (mm) caso tenham sido introduzidos em polegadas.",
+      "Calculate cross-sectional area: Area = 2&times;B&times;T<sub>f</sub> + (H &minus; 2T<sub>f</sub>)&times;T<sub>w</sub> (mm&sup2;).": "Calcule a área da secção transversal: Área = 2&times;B&times;T<sub>f</sub> + (H &minus; 2T<sub>f</sub>)&times;T<sub>w</sub> (mm&sup2;).",
+      "Calculate volume: V = Area &times; L (mm&sup3;).": "Calcule o volume: V = Área &times; L (mm&sup3;).",
+      "Calculate weight: W = V &times; &rho; &divide; 1,000,000 (kg).": "Calcule o peso: W = V &times; &rho; &divide; 1.000.000 (kg).",
+      "Multiply by quantity for total weight.": "Multiplique pela quantidade para obter o peso total.",
+      "<strong>Variables:</strong> B is flange width, H overall height, T<sub>f</sub> flange thickness, T<sub>w</sub> web thickness, L length, and &rho; density. Both flange junctions are counted once.": "<strong>Variáveis:</strong> B é a largura da flange, H a altura total, T<sub>f</sub> a espessura da flange, T<sub>w</sub> a espessura da alma, L o comprimento e &rho; a densidade. Cada ligação alma-flange é contabilizada uma única vez.",
+      "<strong>Assumptions/limitations:</strong> Theoretical I-section with parallel flanges, uniform thicknesses, and sharp corners. Standard I-beams often have radii/tapers, so actual weights may differ.": "<strong>Suposições/limitações:</strong> Perfil I teórico com flanges paralelas, espessuras uniformes e cantos vivos. Vigas I normalizadas têm frequentemente raios e conicidades, pelo que os pesos reais podem diferir.",
+      "Material Density (&rho;)": "Densidade do material (&rho;)",
+      "Calculation": "Cálculo",
+      "W = [2&times;50&times;8 + (100 &minus; 2&times;8)&times;5] &times; 1000 &times; <span class=\"example-density-term\">7.85</span> &divide; 10&#8310;": "W = [2&times;50&times;8 + (100 &minus; 2&times;8)&times;5] &times; 1000 &times; <span class=\"example-density-term\">7,85</span> &divide; 10&#8310;",
+      "<span class=\"example-density-icon\" aria-hidden=\"true\">&times;</span> Area = 800 + 420 = 1220 mm&sup2;; weight &approx; 9.577 kg/m.": "<span class=\"example-density-icon\" aria-hidden=\"true\">&times;</span> Área = 800 + 420 = 1220 mm&sup2;; peso &approx; 9,577 kg/m.",
+      "Weight =": "Peso =",
+      "9.577 kg": "9,577 kg",
+      "Current category: Structural Sections": "Categoria atual: Perfis estruturais",
+      "C Channel": "Perfil C",
+      "Box Channel": "Perfil caixa",
+      "E-Section": "Perfil E",
+      "L Channel": "Perfil L",
+      "T Channel": "Perfil T",
+      "Hexagon Bar": "Barra hexagonal",
+      "Structural Sections": "Perfis estruturais",
+      "Solid Bars": "Barras maciças"
+    },
+    "faqs": [
+      {
+        "q": "Num perfil I com H = 120 mm, B = 60 mm, abas de 8 mm e alma de 5 mm, qual é o peso por metro?",
+        "a": "A área é 2 × 60 × 8 + (120 − 16) × 5 = 1.480 mm², que com 7,85 g/cm³ dá 11,62 kg/m."
+      },
+      {
+        "q": "Por que motivo a alma é calculada com H menos 2Tf?",
+        "a": "Porque as duas abas já incluem a sua própria espessura na altura total H. Usar a altura livre evita contar essa faixa duas vezes."
+      },
+      {
+        "q": "Quanto pesa uma barra de 8 m desse mesmo perfil?",
+        "a": "11,62 kg/m × 8 m = 92,9 kg. Com quatro barras ficam-se perto de 372 kg."
+      },
+      {
+        "q": "Como converter o peso linear para kg por pé?",
+        "a": "Multiplique por 0,3048, o valor de um pé em metros. No exemplo, 11,62 × 0,3048 = 3,54 kg/pé."
+      },
+      {
+        "q": "Vigas H com abas largas paralelas entram na mesma fórmula?",
+        "a": "Sim. Desde que sejam introduzidos os valores reais de B, H, Tf e Tw da tabela do perfil, o cálculo da área é idêntico."
+      },
+      {
+        "q": "Que diferença faz usar aço inox 316 com 7,98 g/cm³?",
+        "a": "A área mantém-se em 1.480 mm² e o peso sobe para 1.480 × 7,98 ÷ 1.000 = 11,81 kg/m, cerca de 1,7% acima do aço ao carbono."
+      },
+      {
+        "q": "Por que motivo o peso de catálogo é ligeiramente superior?",
+        "a": "Porque os perfis laminados têm raios na ligação alma-aba e abas com conicidade. O modelo teórico considera cantos vivos e espessura constante."
+      }
+    ]
+  },
+  "t-channel": {
+    "title": "Calculadora de Peso de Perfil T | Calculadora de Peso de Metais",
+    "description": "Calcule o peso de um perfil T a partir da altura total, da largura da flange, das espessuras da alma e da flange, do comprimento e da densidade do material.",
+    "h1": "Calculadora de Peso de Perfil T",
+    "strings": {
+      "T Channel Weight Calculator": "Calculadora de Peso de Perfil T",
+      "T Channel Weight Calculator | Metal Weight Calculator": "Calculadora de Peso de Perfil T | Calculadora de Peso de Metais",
+      "Channel Dimensions": "Dimensões do perfil",
+      "t channel front and side engineering views": "vistas frontal e lateral de engenharia do perfil T",
+      "T channel front view showing height H, flange width B, web thickness Tw and flange thickness Tf": "Vista frontal do perfil T com altura H, largura da flange B, espessura da alma Tw e espessura da flange Tf",
+      "T channel side view showing the full length L as a 2D orthographic side elevation with a continuous top flange edge and flange thickness boundary": "Vista lateral do perfil T com o comprimento total L como elevação lateral ortográfica 2D, com aresta contínua da flange superior e limite da espessura da flange",
+      "Flange Width (B)": "Largura da flange (B)",
+      "Enter flange width": "Introduza a largura da flange",
+      "Overall Height (H)": "Altura total (H)",
+      "Enter overall height": "Introduza a altura total",
+      "Flange Thickness (Tf)": "Espessura da flange (Tf)",
+      "Flange Thickness (T<sub>f</sub>)": "Espessura da flange (T<sub>f</sub>)",
+      "Enter flange thickness": "Introduza a espessura da flange",
+      "Web Thickness (Tw)": "Espessura da alma (Tw)",
+      "Web Thickness (T<sub>w</sub>)": "Espessura da alma (T<sub>w</sub>)",
+      "Enter web thickness": "Introduza a espessura da alma",
+      "Length (L)": "Comprimento (L)",
+      "Enter length": "Introduza o comprimento",
+      "Carbon Steel": "Aço ao carbono",
+      "Stainless Steel": "Aço inoxidável",
+      "Aluminium": "Alumínio",
+      "Brass": "Latão",
+      "Bronze": "Bronze",
+      "Cast Iron": "Ferro fundido",
+      "Copper": "Cobre",
+      "Zinc": "Zinco",
+      "Lead": "Chumbo",
+      "Tin": "Estanho",
+      "Titanium": "Titânio",
+      "Nickel": "Níquel",
+      "Magnesium": "Magnésio",
+      "Inconel 625": "Inconel 625",
+      "Monel 400": "Monel 400",
+      "Carbon Steel — 7.85 g/cm³": "Aço ao carbono — 7,85 g/cm³",
+      "0.00 kg": "0,00 kg",
+      "0.000 kg": "0,000 kg",
+      "0.00000000 m³": "0,00000000 m³",
+      "1 pc": "1 peça",
+      "7.85 g/cm³": "7,85 g/cm³",
+      "Single Channel Weight": "Peso por peça",
+      "Volume Per Item": "Volume por peça",
+      "W = [B &times; T<sub>f</sub> + (H &minus; T<sub>f</sub>) &times; T<sub>w</sub>] &times; L &times; &rho; &divide; 10&#8310;": "W = [B &times; T<sub>f</sub> + (H &minus; T<sub>f</sub>) &times; T<sub>w</sub>] &times; L &times; &rho; &divide; 10&#8310;",
+      "W = Weight (kg) &middot; B = Flange width (mm) &middot; H = Overall height (mm) &middot; T<sub>f</sub> = Flange thickness (mm) &middot; T<sub>w</sub> = Web thickness (mm) &middot; L = Length (mm) &middot; &rho; = Density (g/cm&sup3;)": "W = Peso (kg) &middot; B = Largura da flange (mm) &middot; H = Altura total (mm) &middot; T<sub>f</sub> = Espessura da flange (mm) &middot; T<sub>w</sub> = Espessura da alma (mm) &middot; L = Comprimento (mm) &middot; &rho; = Densidade (g/cm&sup3;)",
+      "How to Calculate (Step-by-Step)": "Como calcular (passo a passo)",
+      "Carbon Steel T Section": "Perfil T em aço ao carbono",
+      "Convert B, H, T<sub>f</sub>, T<sub>w</sub>, and L to millimetres (mm) if entered in inches.": "Converta B, H, T<sub>f</sub>, T<sub>w</sub> e L para milímetros (mm) caso tenham sido introduzidos em polegadas.",
+      "Calculate cross-sectional area: Area = B&times;T<sub>f</sub> + (H &minus; T<sub>f</sub>)&times;T<sub>w</sub> (mm&sup2;).": "Calcule a área da secção transversal: Área = B&times;T<sub>f</sub> + (H &minus; T<sub>f</sub>)&times;T<sub>w</sub> (mm&sup2;).",
+      "Calculate volume: V = Area &times; L (mm&sup3;).": "Calcule o volume: V = Área &times; L (mm&sup3;).",
+      "Calculate weight: W = V &times; &rho; &divide; 1,000,000 (kg).": "Calcule o peso: W = V &times; &rho; &divide; 1.000.000 (kg).",
+      "Multiply by quantity for total weight.": "Multiplique pela quantidade para obter o peso total.",
+      "<strong>Variables:</strong> B is flange width, H overall height, T<sub>f</sub> flange thickness, T<sub>w</sub> web thickness, L length, and &rho; density.": "<strong>Variáveis:</strong> B é a largura da flange, H a altura total, T<sub>f</sub> a espessura da flange, T<sub>w</sub> a espessura da alma, L o comprimento e &rho; a densidade.",
+      "<strong>Assumptions/limitations:</strong> Theoretical sharp-corner T-section geometry; no fillets/tapers. Actual rolled/fabricated section weights may differ.": "<strong>Suposições/limitações:</strong> Geometria teórica de perfil T com cantos vivos, sem raios nem conicidades. O peso de secções laminadas ou fabricadas pode diferir.",
+      "Material Density (&rho;)": "Densidade do material (&rho;)",
+      "Calculation": "Cálculo",
+      "W = [80&times;8 + (100 &minus; 8)&times;6] &times; 1000 &times; <span class=\"example-density-term\">7.85</span> &divide; 10&#8310;": "W = [80&times;8 + (100 &minus; 8)&times;6] &times; 1000 &times; <span class=\"example-density-term\">7,85</span> &divide; 10&#8310;",
+      "<span class=\"example-density-icon\" aria-hidden=\"true\">&times;</span> Area = 1192 mm&sup2;; weight &approx; 9.357 kg/m.": "<span class=\"example-density-icon\" aria-hidden=\"true\">&times;</span> Área = 1192 mm&sup2;; peso &approx; 9,357 kg/m.",
+      "Weight =": "Peso =",
+      "9.357 kg": "9,357 kg",
+      "Current category: Structural Sections": "Categoria atual: Perfis estruturais",
+      "Box Channel": "Perfil caixa",
+      "C Channel": "Perfil C",
+      "E-Section": "Perfil E",
+      "I Channel": "Perfil I",
+      "L Channel": "Perfil L",
+      "Hexagon Bar": "Barra hexagonal",
+      "Structural Sections": "Perfis estruturais",
+      "Solid Bars": "Barras maciças"
+    },
+    "faqs": [
+      {
+        "q": "Para um perfil T com H = 80 mm, B = 60 mm, flange de 8 mm e alma de 6 mm, qual é o peso por metro?",
+        "a": "A área é 60 × 8 + (80 − 8) × 6 = 912 mm². Multiplicando por 7,85 g/cm³ obtêm-se 7,16 kg/m."
+      },
+      {
+        "q": "Por que razão a altura da alma é H menos uma espessura de flange?",
+        "a": "Porque H inclui a flange e a alma só existe por baixo dela. Ao contrário do perfil I, há uma única flange a descontar."
+      },
+      {
+        "q": "Quanto pesam 4,2 m desse perfil T?",
+        "a": "7,16 kg/m × 4,2 m = 30,1 kg. Basta indicar 4.200 mm como comprimento na calculadora."
+      },
+      {
+        "q": "Se alargar a flange de 60 para 90 mm, quanto acrescento ao peso linear?",
+        "a": "A área da flange aumenta 30 × 8 = 240 mm², o que corresponde a 240 × 7,85 ÷ 1.000 = 1,88 kg/m adicionais."
+      },
+      {
+        "q": "Posso usar a ferramenta para um T obtido por corte de uma viga I?",
+        "a": "Sim, desde que meça a altura total e as espessuras reais da flange e da alma. O metal de solda de um T fabricado por soldadura não está incluído."
+      },
+      {
+        "q": "Qual seria o peso em alumínio 6061 com 2,70 g/cm³?",
+        "a": "Com a mesma área de 912 mm², o resultado é 912 × 2,70 ÷ 1.000 = 2,46 kg/m."
+      },
+      {
+        "q": "Quantas barras de 6 m do T 100 × 80 × 8/6 fazem uma tonelada?",
+        "a": "Cada barra pesa 9,36 × 6 = 56,1 kg; 1.000 ÷ 56,1 dá cerca de 17,8, ou seja, 17 barras completas e um pouco mais de metade de outra."
+      }
+    ]
+  },
+  "l-channel": {
+    "title": "Calculadora de Peso de Perfil L | Calculadora de Peso de Metais",
+    "description": "Calcule o peso de um ângulo L a partir do comprimento da aba horizontal, da aba vertical, da espessura, do comprimento e da densidade do material.",
+    "h1": "Calculadora de Peso de Perfil L",
+    "strings": {
+      "L Channel Weight Calculator": "Calculadora de Peso de Perfil L",
+      "L Channel Weight Calculator | Metal Weight Calculator": "Calculadora de Peso de Perfil L | Calculadora de Peso de Metais",
+      "Angle Dimensions": "Dimensões do ângulo",
+      "l channel front and side engineering views": "vistas frontal e lateral de engenharia do perfil L",
+      "L channel front view showing horizontal leg A, vertical leg B and uniform leg thickness T": "Vista frontal do perfil L com a aba horizontal A, a aba vertical B e espessura uniforme T das abas",
+      "L channel side view showing the full length L as a 2D orthographic side elevation with a continuous vertical leg edge and horizontal leg thickness boundary": "Vista lateral do perfil L com o comprimento total L como elevação lateral ortográfica 2D, com aresta contínua da aba vertical e limite da espessura da aba horizontal",
+      "Vertical Leg (B)": "Aba vertical (B)",
+      "Enter vertical leg": "Introduza a aba vertical",
+      "Horizontal Leg (A)": "Aba horizontal (A)",
+      "Enter horizontal leg": "Introduza a aba horizontal",
+      "Thickness (T)": "Espessura (T)",
+      "Enter thickness": "Introduza a espessura",
+      "Length (L)": "Comprimento (L)",
+      "Enter length": "Introduza o comprimento",
+      "Carbon Steel": "Aço ao carbono",
+      "Stainless Steel": "Aço inoxidável",
+      "Aluminium": "Alumínio",
+      "Brass": "Latão",
+      "Bronze": "Bronze",
+      "Cast Iron": "Ferro fundido",
+      "Copper": "Cobre",
+      "Zinc": "Zinco",
+      "Lead": "Chumbo",
+      "Tin": "Estanho",
+      "Titanium": "Titânio",
+      "Nickel": "Níquel",
+      "Magnesium": "Magnésio",
+      "Inconel 625": "Inconel 625",
+      "Monel 400": "Monel 400",
+      "Carbon Steel — 7.85 g/cm³": "Aço ao carbono — 7,85 g/cm³",
+      "0.00 kg": "0,00 kg",
+      "0.000 kg": "0,000 kg",
+      "0.00000000 m³": "0,00000000 m³",
+      "1 pc": "1 peça",
+      "7.85 g/cm³": "7,85 g/cm³",
+      "Single Angle Weight": "Peso por peça",
+      "Volume Per Item": "Volume por peça",
+      "W = [A &times; T + (B &minus; T) &times; T] &times; L &times; &rho; &divide; 10&#8310;": "W = [A &times; T + (B &minus; T) &times; T] &times; L &times; &rho; &divide; 10&#8310;",
+      "W = Weight (kg) &middot; B = Vertical leg (mm) &middot; A = Horizontal leg (mm) &middot; T = Thickness (mm) &middot; L = Length (mm) &middot; &rho; = Density (g/cm&sup3;)": "W = Peso (kg) &middot; B = Aba vertical (mm) &middot; A = Aba horizontal (mm) &middot; T = Espessura (mm) &middot; L = Comprimento (mm) &middot; &rho; = Densidade (g/cm&sup3;)",
+      "How to Calculate (Step-by-Step)": "Como calcular (passo a passo)",
+      "Carbon Steel L Angle": "Ângulo L em aço ao carbono",
+      "Convert B, A, T, and L to millimetres (mm) if entered in inches.": "Converta B, A, T e L para milímetros (mm) caso tenham sido introduzidos em polegadas.",
+      "Calculate cross-sectional area without double-counting the corner: Area = A&times;T + (B &minus; T)&times;T (mm&sup2;).": "Calcule a área da secção transversal sem contar duas vezes o canto: Área = A&times;T + (B &minus; T)&times;T (mm&sup2;).",
+      "Calculate volume: V = Area &times; L (mm&sup3;).": "Calcule o volume: V = Área &times; L (mm&sup3;).",
+      "Calculate weight: W = V &times; &rho; &divide; 1,000,000 (kg).": "Calcule o peso: W = V &times; &rho; &divide; 1.000.000 (kg).",
+      "Multiply by quantity for total weight.": "Multiplique pela quantidade para obter o peso total.",
+      "<strong>Variables:</strong> B (vertical leg) and A (horizontal leg) are outside leg lengths, T is uniform thickness, L is length, and &rho; is density. Corner overlap is counted once (valid when T &lt; A and T &lt; B).": "<strong>Variáveis:</strong> B (aba vertical) e A (aba horizontal) são os comprimentos exteriores das abas, T é a espessura uniforme, L é o comprimento e &rho; é a densidade. A sobreposição no canto é contada uma vez (válido quando T &lt; A e T &lt; B).",
+      "<strong>Assumptions/limitations:</strong> Theoretical sharp-corner geometry with uniform thickness; does not include root/toe radii of rolled sections. Actual weights may vary by standard and tolerances.": "<strong>Suposições/limitações:</strong> Geometria teórica de cantos vivos com espessura uniforme; não inclui os raios da raiz nem das pontas dos ângulos laminados. Os pesos reais podem variar conforme a norma e as tolerâncias.",
+      "Material Density (&rho;)": "Densidade do material (&rho;)",
+      "Calculation": "Cálculo",
+      "W = [50&times;5 + (50 &minus; 5)&times;5] &times; 1000 &times; <span class=\"example-density-term\">7.85</span> &divide; 10&#8310;": "W = [50&times;5 + (50 &minus; 5)&times;5] &times; 1000 &times; <span class=\"example-density-term\">7,85</span> &divide; 10&#8310;",
+      "<span class=\"example-density-icon\" aria-hidden=\"true\">&times;</span> Area = 475 mm&sup2;; weight &approx; 3.729 kg per metre.": "<span class=\"example-density-icon\" aria-hidden=\"true\">&times;</span> Área = 475 mm&sup2;; peso &approx; 3,729 kg por metro.",
+      "Weight =": "Peso =",
+      "3.729 kg": "3,729 kg",
+      "Current category: Structural Sections": "Categoria atual: Perfis estruturais",
+      "C Channel": "Perfil C",
+      "Box Channel": "Perfil caixa",
+      "E-Section": "Perfil E",
+      "I Channel": "Perfil I",
+      "T Channel": "Perfil T",
+      "Hexagon Bar": "Barra hexagonal",
+      "Structural Sections": "Perfis estruturais",
+      "Solid Bars": "Barras maciças"
+    },
+    "faqs": [
+      {
+        "q": "Que peso por metro tem um ângulo desigual 75 × 50 × 6 mm?",
+        "a": "A área é 6 × (75 + 50 − 6) = 714 mm², o que em aço ao carbono corresponde a 714 × 7,85 ÷ 1.000 = 5,60 kg/m."
+      },
+      {
+        "q": "Por que motivo a zona do canto só é descontada uma vez?",
+        "a": "Porque as duas abas partilham o mesmo quadrado de lado T na esquina. Somar A × T e B × T contaria esse quadrado duas vezes."
+      },
+      {
+        "q": "Quantos metros de ângulo 50 × 50 × 5 são necessários para uma tonelada?",
+        "a": "A 3,729 kg/m, 1.000 ÷ 3,729 = 268 m, o que corresponde a cerca de 45 barras de 6 m."
+      },
+      {
+        "q": "Quanto aumenta o peso ao passar de 5 para 6 mm num ângulo 50 × 50?",
+        "a": "A área sobe de 475 para 564 mm² e o peso de 3,729 para 4,427 kg/m, um acréscimo de 18,7%."
+      },
+      {
+        "q": "O modelo inclui os raios da raiz e das pontas do ângulo laminado?",
+        "a": "Não. Assume arestas vivas e espessura uniforme; em ângulos laminados os raios acrescentam uma pequena quantidade de metal, pelo que a tabela pode ser um pouco superior."
+      },
+      {
+        "q": "Qual o peso do mesmo ângulo em alumínio 6061?",
+        "a": "Para 50 × 50 × 5, a área de 475 mm² com 2,70 g/cm³ dá 1,28 kg/m."
+      },
+      {
+        "q": "Se o desenho der as medidas em polegadas, tenho de converter à mão?",
+        "a": "Não. Comute a unidade para polegadas e introduza as duas abas, a espessura e o comprimento nessa unidade; a calculadora converte para milímetros e devolve o resultado em quilogramas."
+      }
+    ]
+  },
+  "e-section": {
+    "title": "Calculadora de Peso de Perfil E | Calculadora de Peso de Metais",
+    "description": "Calcule o peso de um perfil E maciço a partir da altura total, da largura total, da espessura da alma, da espessura das flanges, do comprimento, da densidade do material e da quantidade.",
+    "h1": "Calculadora de Peso de Perfil E",
+    "strings": {
+      "E-Section Weight Calculator": "Calculadora de Peso de Perfil E",
+      "E-Section Weight Calculator | Metal Weight Calculator": "Calculadora de Peso de Perfil E | Calculadora de Peso de Metais",
+      "E-Section Dimensions": "Dimensões do perfil E",
+      "e-section front and side engineering views": "vistas frontal e lateral de engenharia do perfil E",
+      "E-section front view showing overall height H, overall width B, web thickness Tw and flange thickness Tf": "Vista frontal do perfil E com altura total H, largura total B, espessura da alma Tw e espessura da flange Tf",
+      "E-section side view showing the full length L as a 2D orthographic side elevation with continuous top, middle and bottom flange edges and flange thickness boundaries": "Vista lateral do perfil E com o comprimento total L como elevação lateral ortográfica 2D, com arestas contínuas das flanges superior, intermédia e inferior e limites de espessura das flanges",
+      "Overall Width (B)": "Largura total (B)",
+      "Enter overall width": "Introduza a largura total",
+      "Overall Height (H)": "Altura total (H)",
+      "Enter overall height": "Introduza a altura total",
+      "Flange Thickness (Tf)": "Espessura da flange (Tf)",
+      "Flange Thickness (T<sub>f</sub>)": "Espessura da flange (T<sub>f</sub>)",
+      "Enter flange thickness": "Introduza a espessura da flange",
+      "Web Thickness (Tw)": "Espessura da alma (Tw)",
+      "Web Thickness (T<sub>w</sub>)": "Espessura da alma (T<sub>w</sub>)",
+      "Enter web thickness": "Introduza a espessura da alma",
+      "Length (L)": "Comprimento (L)",
+      "Enter length": "Introduza o comprimento",
+      "Carbon Steel": "Aço ao carbono",
+      "Stainless Steel": "Aço inoxidável",
+      "Aluminium": "Alumínio",
+      "Brass": "Latão",
+      "Bronze": "Bronze",
+      "Cast Iron": "Ferro fundido",
+      "Copper": "Cobre",
+      "Zinc": "Zinco",
+      "Lead": "Chumbo",
+      "Tin": "Estanho",
+      "Titanium": "Titânio",
+      "Nickel": "Níquel",
+      "Magnesium": "Magnésio",
+      "Inconel 625": "Inconel 625",
+      "Monel 400": "Monel 400",
+      "Carbon Steel — 7.85 g/cm³": "Aço ao carbono — 7,85 g/cm³",
+      "0.00 kg": "0,00 kg",
+      "0.000 kg": "0,000 kg",
+      "0.00000000 m³": "0,00000000 m³",
+      "1 pc": "1 peça",
+      "7.85 g/cm³": "7,85 g/cm³",
+      "Single Section Weight": "Peso por peça",
+      "Volume Per Section": "Volume por peça",
+      "W = [H &times; T<sub>w</sub> + 3 &times; (B &minus; T<sub>w</sub>) &times; T<sub>f</sub>] &times; L &times; &rho; &divide; 10&#8310;": "W = [H &times; T<sub>w</sub> + 3 &times; (B &minus; T<sub>w</sub>) &times; T<sub>f</sub>] &times; L &times; &rho; &divide; 10&#8310;",
+      "W = Weight (kg) &middot; B = Overall width (mm) &middot; H = Overall height (mm) &middot; T<sub>f</sub> = Flange thickness (mm) &middot; T<sub>w</sub> = Web thickness (mm) &middot; L = Length (mm) &middot; &rho; = Density (g/cm&sup3;)": "W = Peso (kg) &middot; B = Largura total (mm) &middot; H = Altura total (mm) &middot; T<sub>f</sub> = Espessura da flange (mm) &middot; T<sub>w</sub> = Espessura da alma (mm) &middot; L = Comprimento (mm) &middot; &rho; = Densidade (g/cm&sup3;)",
+      "How to Calculate (Step-by-Step)": "Como calcular (passo a passo)",
+      "Carbon Steel E Section": "Perfil E em aço ao carbono",
+      "Convert B, H, T<sub>f</sub>, T<sub>w</sub>, and L to millimetres (mm) if entered in inches.": "Converta B, H, T<sub>f</sub>, T<sub>w</sub> e L para milímetros (mm) caso tenham sido introduzidos em polegadas.",
+      "Calculate cross-sectional area of the E section: Area = H&times;T<sub>w</sub> + 3&times;(B &minus; T<sub>w</sub>)&times;T<sub>f</sub> (mm&sup2;).": "Calcule a área da secção transversal do perfil E: Área = H&times;T<sub>w</sub> + 3&times;(B &minus; T<sub>w</sub>)&times;T<sub>f</sub> (mm&sup2;).",
+      "Calculate volume: V = Area &times; L (mm&sup3;).": "Calcule o volume: V = Área &times; L (mm&sup3;).",
+      "Calculate weight: W = V &times; &rho; &divide; 1,000,000 (kg).": "Calcule o peso: W = V &times; &rho; &divide; 1.000.000 (kg).",
+      "Multiply by quantity for total weight.": "Multiplique pela quantidade para obter o peso total.",
+      "<strong>Variables:</strong> B is overall width, H overall height, T<sub>f</sub> flange thickness (top, middle, bottom), T<sub>w</sub> web thickness, L length, and &rho; density.": "<strong>Variáveis:</strong> B é a largura total, H a altura total, T<sub>f</sub> a espessura da flange (superior, intermédia e inferior), T<sub>w</sub> a espessura da alma, L o comprimento e &rho; a densidade.",
+      "<strong>Assumptions/limitations:</strong> Assumes a solid E-shaped section with a full-height web and three equal-thickness flanges projecting to overall width B. Theoretical sharp-corner geometry; actual profiles may vary.": "<strong>Suposições/limitações:</strong> Considera um perfil E maciço com alma de altura total e três flanges de espessura igual que chegam à largura total B. Geometria teórica de cantos vivos; perfis reais podem variar.",
+      "Material Density (&rho;)": "Densidade do material (&rho;)",
+      "Calculation": "Cálculo",
+      "W = [100&times;6 + 3&times;(50 &minus; 6)&times;8] &times; 1000 &times; <span class=\"example-density-term\">7.85</span> &divide; 10&#8310;": "W = [100&times;6 + 3&times;(50 &minus; 6)&times;8] &times; 1000 &times; <span class=\"example-density-term\">7,85</span> &divide; 10&#8310;",
+      "<span class=\"example-density-icon\" aria-hidden=\"true\">&times;</span> Area = 600 + 1056 = 1656 mm&sup2;; weight &approx; 13.000 kg/m.": "<span class=\"example-density-icon\" aria-hidden=\"true\">&times;</span> Área = 600 + 1056 = 1656 mm&sup2;; peso &approx; 13,000 kg/m.",
+      "Weight =": "Peso =",
+      "13.000 kg": "13,000 kg",
+      "Current category: Structural Sections": "Categoria atual: Perfis estruturais",
+      "Box Channel": "Perfil caixa",
+      "C Channel": "Perfil C",
+      "I Channel": "Perfil I",
+      "L Channel": "Perfil L",
+      "T Channel": "Perfil T",
+      "Hexagon Bar": "Barra hexagonal",
+      "Structural Sections": "Perfis estruturais",
+      "Solid Bars": "Barras maciças"
+    },
+    "faqs": [
+      {
+        "q": "Que peso por metro tem um perfil E de 120 × 60 mm com alma de 6 mm e abas de 8 mm?",
+        "a": "A área é 120 × 6 + 3 × (60 − 6) × 8 = 2.016 mm². Com 7,85 g/cm³ obtêm-se 15,83 kg/m."
+      },
+      {
+        "q": "Por que aparece o fator 3 × (B − Tw) na fórmula?",
+        "a": "Porque existem três abas e cada uma sobrepõe a alma numa faixa de espessura Tw. Essa faixa já está contabilizada no termo da alma."
+      },
+      {
+        "q": "Quanto pesam 5 m desse perfil E?",
+        "a": "15,83 kg/m × 5 m = 79,1 kg. Introduzindo 5.000 mm no campo comprimento obtém-se diretamente esse valor."
+      },
+      {
+        "q": "Um perfil E pesa menos do que dois canais U encostados?",
+        "a": "Sim, para a mesma altura, largura e espessuras: o E tem três abas e os dois canais juntos têm quatro. O centro de gravidade do E fica também deslocado para o lado das abas."
+      },
+      {
+        "q": "Posso definir espessuras diferentes para cada uma das três abas?",
+        "a": "Não na ferramenta, que usa um único valor Tf. Nesse caso, some manualmente H × Tw com a soma de cada largura de aba multiplicada pela sua espessura."
+      },
+      {
+        "q": "Qual o peso em alumínio 6063 com 2,70 g/cm³?",
+        "a": "Para a secção de 2.016 mm², o resultado é 2.016 × 2,70 ÷ 1.000 = 5,44 kg/m."
+      },
+      {
+        "q": "Quantas peças de 6 m do perfil 100 × 50 × 6/8 cabem numa tonelada?",
+        "a": "Cada peça pesa cerca de 13,0 × 6 = 78 kg, pelo que 1.000 ÷ 78 ≈ 12,8: 12 peças completas e uma parcial."
+      }
+    ]
+  }
+}

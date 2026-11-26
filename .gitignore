@@ -1,0 +1,22 @@
+# Collected analytics events are deployment data, not source
+backend/analytics/data/
+
+# Environment files: configuration and secrets stay out of the repository
+backend/.env
+.env
+.env.local
+
+# Logs and local process files
+*.log
+*.pid
+
+# Operating system / editor noise
+.DS_Store
+Thumbs.db
+
+# Local cleanup backup (not part of the website)
+.backup/
+.tmp/
+
+# Analytics share tokens (deployment data)
+backend/analytics/shares.json

@@ -1,0 +1,508 @@
+/* ==================================================
+   MULTILINGUAL TYPOGRAPHY AND SCRIPT SUPPORT
+   --------------------------------------------------
+   Loaded only by the generated non-English pages.
+
+   This file contains NOTHING about the design. Colours, widths,
+   spacing, cards, buttons and breakpoints all come from the
+   English master stylesheets, so a translated page is the
+   English page with different words.
+
+   What belongs here, and only here:
+     1. typography tokens — one place for every font stack
+     2. a font stack that can actually render each script
+     3. reading rhythm where the script needs more leading
+     4. a legibility floor for the smallest UI labels
+     5. tracking corrections for complex scripts
+     6. engineering diagram (SVG) typography, and small-screen
+        stacking so diagram labels are never shrunk to mush
+     7. wrapping and clipping safety
+     8. right-to-left corrections for Arabic
+     9. Latin digits and units inside RTL text
+
+   The English pages do not link this file at all, so the English
+   master keeps its original typography untouched.
+   ================================================== */
+
+/* ---------- 1. Typography tokens ----------
+   Latin text inside a translated page uses the same face as the
+   English master (Segoe UI / Arial), so mixed strings such as
+   "7.85 g/cm³" or "MM" look identical in every language. Each
+   script then falls through to a face that really contains it.
+
+   No web font is downloaded: every stack below resolves to a face
+   that ships with Windows, macOS, Android or Linux, so the site
+   keeps working offline and never shows a flash of unstyled text. */
+
+:root {
+    /* Each stack starts with the Latin master face and ends with the
+       script face, so one declaration covers a whole mixed string. */
+    --mw-script-devanagari: "Segoe UI", Arial, Helvetica,
+        "Noto Sans Devanagari", "Nirmala UI", "Devanagari Sangam MN",
+        "Kohinoor Devanagari", "Mangal", "Arial Unicode MS", sans-serif;
+
+    /* Arabic is shaped by one face end to end, so the script face comes
+       first here; its own Latin letters keep the line's baseline aligned. */
+    --mw-script-arabic: "Noto Naskh Arabic", "Noto Sans Arabic", "Segoe UI",
+        "Geeza Pro", "Al Bayan", Tahoma, Arial, sans-serif;
+
+    --mw-script-japanese: "Segoe UI", Arial, "Noto Sans JP", "Yu Gothic UI",
+        "Yu Gothic", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+
+    --mw-script-chinese: "Segoe UI", Arial, "Noto Sans SC", "Microsoft YaHei",
+        "PingFang SC", "Hiragino Sans GB", sans-serif;
+
+    /* Extra leading the script itself needs, not a design change. */
+    --mw-leading-devanagari: 1.65;
+    --mw-leading-arabic: 1.7;
+    --mw-leading-cjk: 1.6;
+
+    /* Smallest size a translated label may be drawn at. */
+    --mw-micro-text: 12px;
+}
+
+/* ---------- 2. Script-capable font stacks ----------
+   Latin first, script second. The browser uses the first family that
+   has each glyph, so Latin letters and digits keep the master face
+   while Devanagari / Arabic / CJK characters reach a face built for
+   them. One font therefore never has to cover two scripts badly. */
+
+html[lang="hi"] body,
+html[lang="mr"] body {
+    font-family: var(--mw-script-devanagari);
+}
+
+html[lang="ar"] body {
+    font-family: var(--mw-script-arabic);
+}
+
+html[lang="ja"] body {
+    font-family: var(--mw-script-japanese);
+}
+
+html[lang="zh"] body {
+    font-family: var(--mw-script-chinese);
+}
+
+/* Windows ships "Segoe UI" without Devanagari, macOS ships no Noto Sans
+   Devanagari and Android ships no Nirmala UI — the fallback chain covers
+   all three, so no page silently lands on a face that lacks the script. */
+
+/* ---------- 3. Reading rhythm ----------
+   Devanagari matras sit above and below the headline; Arabic needs
+   room for its ascenders and descenders. Latin pages keep 1.5. */
+
+html[lang="hi"] body,
+html[lang="mr"] body {
+    line-height: var(--mw-leading-devanagari);
+}
+
+html[lang="ar"] body {
+    line-height: var(--mw-leading-arabic);
+}
+
+html[lang="ja"] body,
+html[lang="zh"] body {
+    line-height: var(--mw-leading-cjk);
+}
+
+/* Long paragraphs need a little more air than UI labels so stacked
+   marks never touch the next line. */
+
+html[lang="hi"] .plate-faq-answer,
+html[lang="mr"] .plate-faq-answer,
+html[lang="ar"] .plate-faq-answer,
+html[lang="hi"] .small-text,
+html[lang="mr"] .small-text,
+html[lang="ar"] .small-text,
+html[lang="hi"] .example-value-note,
+html[lang="mr"] .example-value-note,
+html[lang="ar"] .example-value-note,
+html[lang="hi"] .field-hint,
+html[lang="mr"] .field-hint,
+html[lang="ar"] .field-hint {
+    line-height: 1.75;
+}
+
+/* ---------- 4. Legibility floor for small labels ----------
+   The master page draws some labels at 9–11.5px because English
+   capitals survive that. Devanagari matras merge, Arabic harakat
+   disappear and CJK strokes fill in at those sizes, so every label
+   that small is lifted to one script-safe floor instead of being
+   patched component by component. */
+
+:is(html[lang="hi"], html[lang="mr"], html[lang="ar"], html[lang="ja"], html[lang="zh"]) :is(
+    .feedback-label,
+    .add-shortcut-label,
+    .history-trigger-label,
+    .home-pill,
+    .home-pill span,
+    .unit-btn,
+    .stat span,
+    .brand p,
+    footer,
+    .small-text,
+    .example-value-label,
+    .example-value-note,
+    .example-step-label,
+    .example-material-badge,
+    .example-value strong small,
+    .formula-legend,
+    .plate-density-table th,
+    .related-calc-meta,
+    .related-category-badge,
+    .grade-standard,
+    .grade-detail-label,
+    .grade-density-text small,
+    .grade-density-text strong,
+    .grade-applications .app-text,
+    .grades-note,
+    .calculator-grades-section .grades-heading p,
+    .cd-field__error,
+    .field-hint,
+    .view-title,
+    .dish-note,
+    .flange-note-label,
+    .dwg-figure .t-panelnote,
+    .lang-switch__label-full,
+    .lang-switch__label-short,
+    .history-eyebrow,
+    .history-record-calculator,
+    .history-section-title,
+    .history-dimensions dt,
+    .history-meta dt,
+    .history-record-size,
+    .history-record-weight,
+    .history-empty span,
+    .history-empty p,
+    .sip__eyebrow,
+    .sip__note
+) {
+    font-size: var(--mw-micro-text);
+    line-height: 1.5;
+}
+
+/* The history counter is a fixed 18px badge; it holds one digit, so it
+   gets a slightly smaller floor and must keep its 1:1 box. The header
+   stylesheet scopes it three classes deep, so this rule matches it. */
+
+:is(html[lang="hi"], html[lang="mr"], html[lang="ar"], html[lang="ja"], html[lang="zh"]) .header .header-actions-group .history-count {
+    font-size: 11px;
+    line-height: 1.2;
+}
+
+/* Two header labels are longer than the English ones ("Download App"
+   becomes "ॲप डाउनलोड करा"). The master keeps them on one line with an
+   ellipsis, which would cut a translated label in half, so in scripts
+   with taller glyphs the label may use two lines inside the same pill. */
+
+:is(html[lang="hi"], html[lang="mr"], html[lang="ar"], html[lang="ja"], html[lang="zh"]) .header .header-actions-group :is(.feedback-label, .add-shortcut-label, .history-trigger-label) {
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+    text-align: center;
+    line-height: 1.25;
+}
+
+/* The header action buttons are icon + one-line label; the label may
+   grow within its 38px pill but must never be clipped by a 1:1
+   line-height. */
+
+:is(html[lang="hi"], html[lang="mr"], html[lang="ar"], html[lang="ja"], html[lang="zh"]) :is(
+    .feedback-btn,
+    .add-shortcut-btn,
+    .history-trigger,
+    .unit-btn,
+    .lang-switch > summary
+) {
+    line-height: 1.35;
+}
+
+/* Result labels and value captions use 1.1 line-height in places;
+   give the script its descenders back. */
+
+:is(html[lang="hi"], html[lang="mr"], html[lang="ar"], html[lang="ja"], html[lang="zh"]) :is(
+    .stats,
+    .stat,
+    .result-grid,
+    .density-display,
+    .unit-switch
+) {
+    line-height: 1.45;
+}
+
+/* ---------- 5. Tracking corrections ----------
+   Letter-spacing tuned for uppercase English closes Devanagari
+   matras onto the previous glyph, breaks conjunct clusters and
+   spreads Arabic letters. Complex scripts are always tracked at
+   their own natural spacing; this is a script rule, not a design
+   choice, so it wins over any component value. */
+
+:is(html[lang="hi"], html[lang="mr"], html[lang="ar"], html[lang="ja"], html[lang="zh"]) * {
+    letter-spacing: normal !important;
+    word-spacing: normal;
+}
+
+/* ---------- 6. Engineering diagrams ----------
+   SVG text inherits the page's script stack, so the diagram labels
+   are shaped by the same face as the rest of the page. Nothing here
+   changes a coordinate, an arrow or a measurement. */
+
+:is(html[lang]:not([lang="en"])) .diagram-view text,
+:is(html[lang]:not([lang="en"])) svg text {
+    font-family: inherit;
+    letter-spacing: normal;
+}
+
+/* On phones the two views used to share the card width, which scaled
+   15px labels down to about 8px — smaller than any Devanagari or CJK
+   glyph stays readable at. Below 620px each view keeps the same drawn
+   size it has on desktop and the pair stacks instead. The diagrams,
+   their arrows and their numbering are untouched. */
+
+@media (max-width: 620px) {
+
+    :is(html[lang="hi"], html[lang="mr"], html[lang="ar"], html[lang="ja"], html[lang="zh"]) .diagram-views {
+        flex-wrap: wrap;
+        gap: 14px;
+    }
+
+    :is(html[lang="hi"], html[lang="mr"], html[lang="ar"], html[lang="ja"], html[lang="zh"]) .diagram-view {
+        flex: 1 1 100%;
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
+    }
+
+    /* A stacked view is centred; its caption follows the same rule. */
+    :is(html[lang="hi"], html[lang="mr"], html[lang="ar"], html[lang="ja"], html[lang="zh"]) .diagram-views > * {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* ---------- 7. Long translated words ----------
+   German compounds, long French phrases and CJK runs must wrap instead
+   of pushing a card wider than the English one. */
+
+html[lang]:not([lang="en"]) h1,
+html[lang]:not([lang="en"]) h2,
+html[lang]:not([lang="en"]) h3,
+html[lang]:not([lang="en"]) h4,
+html[lang]:not([lang="en"]) label,
+html[lang]:not([lang="en"]) summary,
+html[lang]:not([lang="en"]) .calculate-btn,
+html[lang]:not([lang="en"]) .reset-btn,
+html[lang]:not([lang="en"]) .related-calc-name,
+html[lang]:not([lang="en"]) .mw-row-ad__title,
+html[lang]:not([lang="en"]) .mw-row-ad__cta {
+    overflow-wrap: break-word;
+}
+
+/* A word that is longer than its line (rare, e.g. a technical term) still
+   stays inside the card instead of creating horizontal scroll. */
+html[lang]:not([lang="en"]) .card,
+html[lang]:not([lang="en"]) .mw-row-ad {
+    overflow-wrap: anywhere;
+}
+
+/* CJK wraps between characters; do not let the safety rules above
+   hyphenate or break Latin/CJK runs mid-glyph. */
+
+:is(html[lang="ja"], html[lang="zh"]) :is(h1, h2, h3, h4, p, li, td, th, label, .card) {
+    word-break: normal;
+    line-break: strict;
+}
+
+/* No fixed-height control may cut a translated label off. Every one of
+   these is min-height based in the master; this only guarantees the
+   translated string can use its full line box. */
+
+:is(html[lang="hi"], html[lang="mr"], html[lang="ar"], html[lang="ja"], html[lang="zh"]) :is(
+    input,
+    select,
+    textarea,
+    button,
+    .unit-btn,
+    .field-input
+) {
+    min-height: 0;
+}
+
+/* ---------- 8. Right-to-left (Arabic) ----------
+   Flex rows and inline icons already mirror through `direction`. Only the
+   places where a Latin concept is anchored to a side need correcting. */
+
+html[dir="rtl"] .brand,
+html[dir="rtl"] .about-card,
+html[dir="rtl"] .plate-faq-answer,
+html[dir="rtl"] .results {
+    text-align: right;
+}
+
+html[dir="rtl"] .formula-equation {
+    direction: ltr;
+    text-align: right;
+}
+
+html[dir="rtl"] .lang-switch__menu {
+    right: auto;
+    left: 0;
+}
+
+/* ---------- 9. Form controls ----------
+   The master stylesheet sets the page font on <body> only. Form controls do
+   not inherit a font by default, so a <select> and its <option>s were drawn
+   in Arial while the label beside them used the script face: the same Marathi
+   word appeared in two different shapes a few pixels apart. Controls now use
+   the page's own script stack, so a dropdown option is shaped exactly like
+   the label above it. Numeric fields stay as they are (digits are Latin). */
+
+:is(html[lang="hi"], html[lang="mr"], html[lang="ar"], html[lang="ja"], html[lang="zh"]) :is(
+    select,
+    option,
+    optgroup,
+    input,
+    textarea,
+    button
+) {
+    font-family: inherit;
+    letter-spacing: normal;
+}
+
+/* A dropdown list draws each option on one line; the script's marks need the
+   taller line box the rest of the page already has. */
+
+:is(html[lang="hi"], html[lang="mr"], html[lang="ar"], html[lang="ja"], html[lang="zh"]) :is(
+    select,
+    option,
+    optgroup
+) {
+    line-height: 1.6;
+}
+
+/* Headings keep their English size and weight; only the line box grows, so
+   the upper matras of a 21px Devanagari headline are not pressed against the
+   line above. The master value (1.1–1.2) was measured for Arial capitals. */
+
+:is(html[lang="hi"], html[lang="mr"], html[lang="ar"], html[lang="ja"], html[lang="zh"]) :is(
+    h1,
+    h2,
+    h3,
+    h4,
+    .info-title,
+    .grades-heading h2
+) {
+    line-height: 1.5 !important;
+}
+
+/* Single-line UI labels are drawn at 1.2 leading for Arial capitals. A
+   Devanagari label at 1.2 has its upper matra touching the box above it, and
+   a CJK label loses its stroke spacing, so the tight cases get the same
+   script-safe leading as body text. Sizes, colours, padding and layout are
+   untouched; only the line box grows by a few pixels. */
+
+:is(html[lang="hi"], html[lang="mr"], html[lang="ar"], html[lang="ja"], html[lang="zh"]) :is(
+    .calculate-btn,
+    .reset-btn,
+    .example-result-label,
+    .related-calc-name,
+    .combo-value,
+    .app-title,
+    .grade-name,
+    .history-clear,
+    .feedback-label,
+    .add-shortcut-label,
+    .history-trigger-label
+) {
+    line-height: 1.45 !important;
+}
+
+/* The tool filters and the card names are the smallest text on the home page:
+   10.5–11.5px with the 1.15–1.24 leading that suits Arial caps. At that size a
+   Devanagari akshara loses its matra between lines, so those two places get a
+   step up in size and a line box that clears the marks. Both are wrapping,
+   minimum-height boxes, so they grow instead of clipping. */
+
+:is(html[lang="hi"], html[lang="mr"], html[lang="ar"], html[lang="ja"], html[lang="zh"]) :is(
+    .filter-pill,
+    .filter-pill span,
+    .hero-eyebrow
+) {
+    line-height: 1.45;
+    letter-spacing: normal;
+}
+
+:is(html[lang="hi"], html[lang="mr"], html[lang="ar"], html[lang="ja"], html[lang="zh"]) :is(
+    .filter-pill,
+    .hero-eyebrow
+) {
+    font-size: 12px;
+}
+
+:is(html[lang="hi"], html[lang="mr"], html[lang="ar"], html[lang="ja"], html[lang="zh"]) .tool-name {
+    font-size: 12px;
+    line-height: 1.4;
+    letter-spacing: normal;
+}
+
+:is(html[lang="hi"], html[lang="mr"], html[lang="ar"], html[lang="ja"], html[lang="zh"]) .header .brand h1 {
+    line-height: 1.45;
+}
+
+/* ---------- 10. Dimension labels inside the drawings ----------
+   The drawings are vector graphics, so they do not inherit the page font the
+   way HTML does; every label is given the script stack and normal tracking
+   here, and its size gets a little more room than the 13–15px English floor
+   so a Devanagari akshara with its matra is still legible at drawing scale.
+   The glyphs, the anchors and the coordinates are untouched: only family and
+   size change, so no dimension, arrow or value can move.
+
+   A vertical dimension label stays rotated by -90°, exactly as in the English
+   master. That rotation is the engineering-drawing convention and it keeps
+   Devanagari shaped as one unit; standing such labels upright would reorder
+   the glyphs of a conjunct (जाड is laid out as ज, ा, ड), which breaks the
+   script and is not a typographic fix. CJK labels are the exception: square
+   glyphs read correctly upright, so the runtime in i18n.js stands those up
+   where the drawing has room for it. Arabic keeps its rotation, which is how
+   Arabic is set vertically. */
+
+:is(html[lang="hi"], html[lang="mr"], html[lang="ar"], html[lang="ja"], html[lang="zh"]) :is(
+    .diagram-view text,
+    .shape-diagram text
+) {
+    font-family: inherit;
+    letter-spacing: normal;
+}
+
+@media (min-width: 641px) {
+    :is(html[lang="hi"], html[lang="mr"], html[lang="ja"], html[lang="zh"]) :is(
+        .diagram-view text,
+        .shape-diagram text
+    ) {
+        font-size: 16.5px;
+    }
+}
+
+/* A mark that overhangs a drawing's box stays visible instead of being cut
+   by the viewport clip; the label positions themselves are unchanged. */
+
+:is(html[lang="hi"], html[lang="mr"], html[lang="ar"], html[lang="ja"], html[lang="zh"]) .diagram-view {
+    overflow: visible;
+}
+
+/* ---------- 11. Numbers and units ----------
+   Digits, "g/cm³", "kg" and formulas stay left-to-right even inside an RTL
+   paragraph, which is how technical Arabic is written. */
+
+html[dir="rtl"] .unit-switch,
+html[dir="rtl"] .density-display,
+html[dir="rtl"] .total-box h3,
+html[dir="rtl"] .stat strong,
+html[dir="rtl"] #tonnes,
+html[dir="rtl"] input[type="number"],
+html[dir="rtl"] .example-value,
+html[dir="rtl"] .example-result {
+    direction: ltr;
+    unicode-bidi: isolate;
+}

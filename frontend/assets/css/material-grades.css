@@ -1,0 +1,1161 @@
+/* ==================================================
+   MATERIAL GRADES AND APPLICATIONS SECTION
+   Home page only: interactive grade guide.
+   Visual target: light grey page, white grade cards with
+   soft blue headers, thin blue borders and navy typography.
+   Uses the grade/application data in material-grades.js.
+================================================== */
+
+.grades-section {
+    --mg-navy: #123452;
+    --mg-navy-soft: #235478;
+    --mg-blue: #2e7fb8;
+    --mg-blue-strong: #1f6da6;
+    --mg-line: #d3e3f2;
+    --mg-line-strong: #9dc6e6;
+    --mg-header: #eaf3fb;
+    --mg-teal: #0d8d89;
+    --mg-muted: #6c8499;
+    --mg-shadow: 0 2px 8px rgba(24, 68, 105, .08);
+
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 34px 0 54px;
+    border-top: 1px solid #dce7ef;
+}
+
+.grades-heading {
+    margin-bottom: 16px;
+}
+
+.grades-heading h2 {
+    color: var(--mg-navy);
+    font-size: 25px;
+    font-weight: 750;
+    letter-spacing: -.028em;
+    line-height: 1.2;
+}
+
+.grades-heading p {
+    margin-top: 6px;
+    color: var(--mg-muted);
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.45;
+}
+
+.grades-card {
+    position: relative;
+    padding: 18px 20px 16px;
+    border: 1px solid var(--mg-line);
+    border-radius: 12px;
+    background: #ffffff;
+    box-shadow: var(--mg-shadow);
+}
+
+/* --------------------------------------------------------------------------
+   Material selection: large searchable combobox
+   -------------------------------------------------------------------------- */
+
+.grades-select-wrap {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 18px;
+}
+
+.grades-select-wrap > label {
+    flex: 0 0 auto;
+    color: var(--mg-navy);
+    font-size: 13px;
+    font-weight: 750;
+    letter-spacing: .005em;
+}
+
+/* The native select stays in the DOM as the data source / form fallback. */
+.grades-select {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.material-combo {
+    position: relative;
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.combo-control {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    min-height: 48px;
+    padding: 0 14px;
+    border: 1px solid var(--mg-line-strong);
+    border-radius: 9px;
+    background: #f8fbfe;
+    color: var(--mg-navy);
+    font-family: inherit;
+    text-align: left;
+    transition: border-color .15s ease, box-shadow .15s ease, background .15s ease;
+}
+
+.combo-control:hover {
+    border-color: var(--mg-blue);
+    background: #f4f9fd;
+}
+
+.combo-control:focus-visible,
+.combo-control[aria-expanded="true"] {
+    outline: none;
+    border-color: var(--mg-blue-strong);
+    box-shadow: 0 0 0 3px rgba(46, 127, 184, .13);
+}
+
+.combo-icon {
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    border-radius: 6px;
+    background: #e6f5f3;
+    color: var(--mg-teal);
+}
+
+.combo-icon svg {
+    width: 18px;
+    height: 18px;
+}
+
+.combo-value {
+    flex: 1 1 auto;
+    overflow: hidden;
+    font-size: 14px;
+    font-weight: 700;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.combo-chevron {
+    flex: 0 0 auto;
+    color: var(--mg-blue-strong);
+    transition: transform .18s ease;
+}
+
+.combo-chevron svg {
+    width: 16px;
+    height: 16px;
+}
+
+.combo-control[aria-expanded="true"] .combo-chevron {
+    transform: rotate(180deg);
+}
+
+.combo-menu {
+    position: absolute;
+    z-index: 30;
+    top: calc(100% + 6px);
+    left: 0;
+    right: 0;
+    max-height: 292px;
+    overflow: auto;
+    border: 1px solid var(--mg-line-strong);
+    border-radius: 10px;
+    background: #ffffff;
+    box-shadow: 0 12px 26px rgba(18, 52, 82, .16);
+    /* The menu stays scrollable, but no native scrollbar is painted inside
+       the Material Grades and Applications section. */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.combo-menu::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    display: none;
+}
+
+.combo-options {
+    padding: 5px;
+}
+
+.combo-option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    min-height: 36px;
+    padding: 7px 10px;
+    border-radius: 6px;
+    color: var(--mg-navy);
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.combo-option:hover,
+.combo-option.is-active {
+    background: #eef6fc;
+}
+
+.combo-option[aria-selected="true"] {
+    color: var(--mg-blue-strong);
+    background: #e7f2fb;
+}
+
+.combo-option-check {
+    color: var(--mg-blue-strong);
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.combo-empty {
+    padding: 14px 12px;
+    color: var(--mg-muted);
+    font-size: 12.5px;
+}
+
+/* --------------------------------------------------------------------------
+   Grade cards: two-column grid
+   -------------------------------------------------------------------------- */
+
+/* Horizontal card track. Only the cards scroll; the detail panel and the note
+   stay outside it, so the section never grows vertically. */
+.grades-list {
+    /* One horizontal row of equal cards on every engine and screen size.
+       A flex row is used instead of a column-flowing grid: a grid with
+       grid-auto-flow: column and no explicit row creates an unbounded
+       implicit column in some engines, which stacked the cards vertically.
+       Flex never wraps here, so the cards can only ever sit side by side. */
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    gap: 14px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 2px 2px 4px;
+    scroll-snap-type: x proximity;
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+    /* The slim progress indicator under the track replaces the native bar. */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.grades-list::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    display: none;
+}
+
+.grade-item {
+    display: flex;
+    width: auto;
+    min-width: 0;
+    max-width: 100%;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+}
+
+/* Every card in the row reaches the same height, so the row has one straight
+   bottom edge whatever the length of each application text. */
+.grade-item > .grade-card {
+    flex: 1 1 auto;
+}
+
+.grade-card-body {
+    flex: 1 1 auto;
+}
+
+/* Three cards fill the visible track on a wide panel; narrower panels step
+   down to two and then to one card with a peek of the next. */
+.grades-list > .grade-item {
+    flex: 0 0 calc((100% - 28px) / 3);
+    min-width: 0;
+    max-width: calc((100% - 28px) / 3);
+}
+
+/* --------------------------------------------------------------------------
+   Carousel shell: the arrows own a gutter on each side of the cards, so they
+   read as two independent controls and never cover an illustration or text.
+   -------------------------------------------------------------------------- */
+
+.grades-carousel {
+    position: relative;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    grid-template-areas:
+        "prev track next"
+        ".    progress .";
+    align-items: center;
+    column-gap: 10px;
+    row-gap: 9px;
+    min-width: 0;
+    /* The card count follows this panel's own width, not the viewport. */
+    container-type: inline-size;
+}
+
+.grades-carousel .grades-list {
+    grid-area: track;
+    min-width: 0;
+}
+
+.grades-carousel.is-scrollable .grades-list {
+    cursor: grab;
+}
+
+.grades-list.is-dragging {
+    cursor: grabbing;
+    scroll-snap-type: none;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.grades-list.is-dragging * {
+    cursor: grabbing;
+}
+
+.grades-nav {
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border: 1px solid #cfe0ee;
+    border-radius: 50%;
+    background: #ffffff;
+    box-shadow: 0 1px 3px rgba(24, 68, 105, .08);
+    color: var(--mg-blue-strong);
+    cursor: pointer;
+    transition: border-color .15s ease, box-shadow .15s ease, opacity .15s ease, transform .15s ease;
+}
+
+.grades-nav-prev {
+    grid-area: prev;
+}
+
+.grades-nav-next {
+    grid-area: next;
+}
+
+.grades-nav svg {
+    width: 19px;
+    height: 19px;
+}
+
+.grades-nav:hover:not(:disabled) {
+    border-color: var(--mg-blue);
+    box-shadow: 0 4px 12px rgba(24, 68, 105, .14);
+    transform: translateY(-1px);
+}
+
+.grades-nav:active:not(:disabled) {
+    transform: translateY(0);
+    box-shadow: 0 1px 3px rgba(24, 68, 105, .1);
+}
+
+.grades-nav:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(46, 127, 184, .2);
+}
+
+.grades-nav:disabled {
+    opacity: .3;
+    cursor: default;
+    box-shadow: none;
+    transform: none;
+}
+
+/* Scroll position indicator: a 3px track under the cards, filled in the theme
+   blue and only visible while the row actually has more cards to reach. */
+.grades-progress {
+    grid-area: progress;
+    position: relative;
+    height: 4px;
+    margin: 2px 0 0;
+    overflow: hidden;
+    border-radius: 99px;
+    background: #d8e5f1;
+    box-shadow: inset 0 1px 1px rgba(24, 68, 105, .06);
+    opacity: 0;
+    transition: opacity .2s ease;
+}
+
+.grades-carousel.is-scrollable .grades-progress {
+    opacity: 1;
+}
+
+/* No scrollbar-like bar is shown in this section. The carousel still scrolls
+   by arrow, wheel, touch swipe and keyboard; only the visual bar is hidden. */
+.grades-carousel .grades-progress {
+    visibility: hidden;
+}
+
+.grades-progress-bar {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 33.333%;
+    border-radius: inherit;
+    background: var(--mg-blue);
+    transition: left .18s ease, width .18s ease;
+}
+
+/* Step the card count down with the width of the card area itself: a narrow
+   calculator column and a wide home page each get a balanced row. */
+@container (max-width: 780px) {
+    .grades-list > .grade-item {
+        flex: 0 0 calc((100% - 14px) / 2);
+        max-width: calc((100% - 14px) / 2);
+    }
+}
+
+@container (max-width: 540px) {
+    /* One complete card per view: no half-cut neighbour, no guessing where
+       the card edge is. The track still swipes to the next grade. */
+    .grades-list > .grade-item {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+/* Fallback for engines without container queries. */
+@supports not (container-type: inline-size) {
+    @media (max-width: 900px) {
+        .grades-list > .grade-item {
+            flex: 0 0 calc((100% - 14px) / 2);
+            max-width: calc((100% - 14px) / 2);
+        }
+    }
+
+    @media (max-width: 560px) {
+        .grades-list > .grade-item {
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+    }
+}
+
+/* Phones: no side gutters, so touch swiping drives the row. */
+@media (max-width: 560px) {
+    .grades-carousel {
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-areas:
+            "track"
+            "progress";
+        column-gap: 0;
+        row-gap: 8px;
+    }
+
+    .grades-nav {
+        display: none;
+    }
+}
+
+.grade-card {
+    display: flex;
+    flex-direction: column;
+    /* Buttons default to flex-start; the header and body must span the card. */
+    align-items: stretch;
+    width: 100%;
+    min-width: 0;
+    min-height: 156px;
+    overflow: hidden;
+    border: 1px solid var(--mg-line);
+    border-radius: 10px;
+    background: #ffffff;
+    box-shadow: 0 1px 3px rgba(24, 68, 105, .06);
+    outline: none;
+    cursor: pointer;
+    transition: border-color .15s ease, box-shadow .15s ease;
+}
+
+.grade-toggle {
+    width: 100%;
+    padding: 0;
+    border: 0;
+    background: #ffffff;
+    color: inherit;
+    font-family: inherit;
+    text-align: left;
+}
+
+.grade-card:hover {
+    border-color: #b7d5ec;
+    box-shadow: 0 3px 10px rgba(24, 68, 105, .1);
+}
+
+.grade-card:focus-visible,
+.grade-card.is-selected {
+    border-color: var(--mg-blue);
+    box-shadow: 0 0 0 2px rgba(46, 127, 184, .16);
+}
+
+/* Grade details on the left, material illustration on the right. The two
+   tracks keep that order at every width: the text column may shrink and
+   wrap, the illustration keeps its square, so the image can never fall
+   below the details on a narrow card. */
+.grade-card-head {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 12px;
+    min-height: 0;
+    padding: 12px 13px;
+    border-bottom: 1px solid #d9e7f3;
+    background: var(--mg-header);
+}
+
+/* Grade names wrap instead of being cut off: a three-card row must show the
+   full designation, whatever its length, at the same font size. */
+.grade-name {
+    min-width: 0;
+    color: var(--mg-navy);
+    font-size: 13px;
+    font-weight: 750;
+    line-height: 1.3;
+    white-space: normal;
+    overflow-wrap: break-word;
+}
+
+.grade-density {
+    display: inline-flex;
+    align-self: flex-start;
+    flex: 0 0 auto;
+    align-items: center;
+    gap: 6px;
+    margin-top: 6px;
+    color: var(--mg-navy-soft);
+    font-size: 11.5px;
+    font-weight: 750;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+}
+
+.grade-density svg {
+    width: 14px;
+    height: 14px;
+    color: var(--mg-blue-strong);
+}
+
+.grade-card-body {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    min-width: 0;
+    min-height: 0;
+    padding: 11px 13px 13px;
+}
+
+.grade-detail {
+    padding: 9px 12px 11px;
+    border-top: 1px solid #dce9f4;
+    background: #f8fbfe;
+}
+
+.grade-detail-label {
+    display: block;
+    margin-bottom: 3px;
+    color: var(--mg-navy-soft);
+    font-size: 10.5px;
+    font-weight: 800;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+}
+
+.grade-detail p {
+    color: #58758a;
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 1.45;
+}
+
+/* Illustration tile: a fixed square inside the card header, so it stays in
+   the upper right of the same card and never takes a row of its own. */
+.grade-art {
+    display: flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    width: 58px;
+    height: 58px;
+    border: 1px solid #d9e8f4;
+    border-radius: 9px;
+    background: #ffffff;
+}
+
+.grade-art svg {
+    width: 48px;
+    height: 48px;
+}
+
+.grade-applications {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.grade-applications .app-title {
+    display: block;
+    margin-bottom: 4px;
+    color: var(--mg-navy-soft);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: .012em;
+}
+
+.grade-applications .app-text {
+    display: block;
+    color: #4b6478;
+    font-size: 11.8px;
+    font-weight: 500;
+    line-height: 1.45;
+    overflow-wrap: anywhere;
+}
+
+.grades-note {
+    margin-top: 14px;
+    padding-top: 11px;
+    border-top: 1px solid #e7eff6;
+    color: var(--mg-muted);
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+/* --------------------------------------------------------------------------
+   Card standard + dual-unit density (keeps the reference card hierarchy)
+   -------------------------------------------------------------------------- */
+
+.grade-title-box {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+}
+
+.grade-standard {
+    display: block;
+    overflow: hidden;
+    color: #6a8aa4;
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 1.25;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.grade-density-text {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1px;
+    line-height: 1.2;
+}
+
+.grade-density-text strong {
+    color: var(--mg-navy-soft);
+    font-size: 11.5px;
+    font-weight: 750;
+}
+
+.grade-density-text small {
+    color: #7894a9;
+    font-size: 9.5px;
+    font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   Detailed grade information below the cards
+   -------------------------------------------------------------------------- */
+
+.grade-info {
+    grid-column: 1 / -1;
+    box-sizing: border-box;
+    min-width: 0;
+    max-width: 100%;
+    overflow: hidden;
+    border: 1px solid var(--mg-line);
+    border-radius: 10px;
+    background: #ffffff;
+    box-shadow: var(--mg-shadow);
+}
+
+.info-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 14px 16px;
+    border-bottom: 1px solid #d9e7f3;
+    background: var(--mg-header);
+}
+
+.info-heading {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+}
+
+.info-eyebrow {
+    color: var(--mg-blue-strong);
+    font-size: 10.5px;
+    font-weight: 800;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+}
+
+.info-title {
+    margin: 0;
+    color: var(--mg-navy);
+    font-size: 17px;
+    font-weight: 750;
+    line-height: 1.25;
+}
+
+.info-standard {
+    color: #6a8aa4;
+    font-size: 11.5px;
+    font-weight: 600;
+}
+
+.info-header-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.info-density {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 1px;
+    white-space: nowrap;
+}
+
+.info-density-g {
+    color: var(--mg-navy-soft);
+    font-size: 15px;
+    font-weight: 750;
+}
+
+.info-density-kg {
+    color: #7894a9;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.info-close {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    padding: 0;
+    border: 1px solid #c9dcec;
+    border-radius: 6px;
+    background: #ffffff;
+    color: #58758a;
+    font-family: inherit;
+    font-size: 18px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.info-close:hover {
+    border-color: var(--mg-blue);
+    color: var(--mg-blue-strong);
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0;
+}
+
+.info-section {
+    min-width: 0;
+    padding: 13px 16px;
+    border-bottom: 1px solid #e6eff6;
+}
+
+.info-section:nth-child(odd) {
+    border-right: 1px solid #e6eff6;
+}
+
+.info-section-title {
+    display: block;
+    margin-bottom: 7px;
+    color: var(--mg-navy-soft);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .03em;
+    text-transform: uppercase;
+}
+
+.info-text,
+.info-unavailable {
+    margin: 0;
+    color: #4b6478;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.55;
+}
+
+.info-text p,
+.info-unavailable {
+    margin: 0 0 6px;
+}
+
+.info-text p:last-child {
+    margin-bottom: 0;
+}
+
+.info-lead {
+    color: var(--mg-navy) !important;
+    font-weight: 700 !important;
+}
+
+.info-source {
+    color: #7894a9 !important;
+    font-size: 11px !important;
+}
+
+.info-unavailable {
+    color: #8aa0b3;
+    font-style: italic;
+}
+
+.info-rows {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.info-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.info-row-label {
+    color: #6a8aa4;
+    font-size: 11.5px;
+    font-weight: 600;
+}
+
+.info-row-value {
+    color: var(--mg-navy-soft);
+    font-size: 11.5px;
+    font-weight: 700;
+    text-align: right;
+}
+
+.info-features {
+    margin: 0;
+    padding-left: 16px;
+    color: #4b6478;
+    font-size: 12px;
+    line-height: 1.55;
+}
+
+.info-features li {
+    margin-bottom: 3px;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive behaviour (layout and card design stay identical)
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 900px) {
+    .grades-section {
+        padding: 30px 0 46px;
+    }
+
+    .grades-card {
+        padding: 16px;
+    }
+
+    .grades-select-wrap {
+        align-items: stretch;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .grades-select-wrap > label {
+        font-size: 13px;
+    }
+
+    .material-combo,
+    .combo-control {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .grades-list {
+        gap: 12px;
+        padding: 2px 2px 4px;
+    }
+
+    .grade-card-head {
+        gap: 10px;
+        padding: 11px 12px;
+    }
+
+    .grade-name {
+        overflow: visible;
+        white-space: normal;
+        text-overflow: clip;
+    }
+
+    /* Narrow three-up cards: let the standard wrap instead of pushing the
+       card wider than its column. */
+    .grade-standard {
+        overflow: visible;
+        white-space: normal;
+        overflow-wrap: anywhere;
+    }
+
+    .grade-card-body {
+        gap: 8px;
+        padding: 10px 12px 12px;
+    }
+
+    .grade-art {
+        width: 54px;
+        height: 54px;
+    }
+
+    .grade-art svg {
+        width: 44px;
+        height: 44px;
+    }
+
+    .grade-applications .app-text {
+        font-size: 11px;
+        line-height: 1.4;
+    }
+
+    .grade-card,
+    .grade-toggle {
+        min-height: 0;
+    }
+
+    .grade-card-body {
+        min-height: 0;
+    }
+
+    .info-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .info-section:nth-child(odd) {
+        border-right: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .grades-section {
+        padding: 24px 0 40px;
+    }
+
+    .grades-heading h2 {
+        font-size: 22px;
+        line-height: 1.25;
+    }
+
+    .grades-heading p {
+        font-size: 12.5px;
+    }
+
+    .grades-card {
+        padding: 14px 12px;
+        border-radius: 12px;
+    }
+
+    .combo-control {
+        min-height: 46px;
+        padding: 0 12px;
+        gap: 10px;
+    }
+
+    .combo-value {
+        font-size: 14px;
+    }
+
+    .grade-card-head {
+        padding: 10px 11px;
+        gap: 9px;
+    }
+
+    .grade-name {
+        font-size: 13px;
+    }
+
+    .grade-density {
+        font-size: 11.5px;
+        gap: 5px;
+        margin-top: 5px;
+    }
+
+    /* Both density units must stay legible on a phone. */
+    .grade-density-text strong {
+        font-size: 12px;
+    }
+
+    .grade-density-text small {
+        font-size: 10px;
+    }
+
+    .grade-card-body {
+        gap: 10px;
+        padding: 10px 11px 12px;
+    }
+
+    .grade-art {
+        width: 50px;
+        height: 50px;
+    }
+
+    .grade-art svg {
+        width: 42px;
+        height: 42px;
+    }
+
+    .grade-applications .app-title {
+        font-size: 12px;
+    }
+
+    .grade-applications .app-text {
+        font-size: 11.8px;
+        line-height: 1.5;
+    }
+
+    .grades-note {
+        font-size: 11px;
+    }
+
+    .info-header {
+        flex-direction: column;
+        gap: 10px;
+        padding: 13px 12px;
+    }
+
+    .info-header-right {
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .info-section {
+        padding: 12px;
+    }
+}
+
+@media (max-width: 360px) {
+    .combo-control {
+        min-height: 44px;
+        padding: 0 10px;
+        gap: 8px;
+    }
+
+    .combo-icon {
+        width: 24px;
+        height: 24px;
+    }
+
+    .combo-value {
+        font-size: 13.5px;
+    }
+
+    .grade-card-head {
+        gap: 8px;
+        padding: 9px 10px;
+    }
+
+    .grade-name {
+        white-space: normal;
+        overflow: visible;
+        text-overflow: clip;
+    }
+
+    .grade-card-body {
+        gap: 9px;
+        padding: 9px 10px 11px;
+    }
+
+    .grade-art {
+        width: 46px;
+        height: 46px;
+    }
+
+    .grade-art svg {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* Print ------------------------------------------------------------------- */
+@media print {
+    .grades-section {
+        max-width: none;
+        padding-top: 18px;
+        border-top: 0;
+        break-inside: avoid;
+    }
+
+    .grades-card,
+    .grade-card {
+        box-shadow: none;
+    }
+
+    .grades-list {
+        max-height: none;
+        overflow: visible;
+    }
+
+    .combo-menu {
+        display: none;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   Home page variant
+   The home page renders the same panel as the calculators; only the
+   Show More / Show Less control differs, spanning the full inner width of
+   the section like the primary Calculate Weight button.
+   -------------------------------------------------------------------------- */
+
+.grades-section.grades-full-width {
+    margin-bottom: 34px;
+}
+
+.grades-full-width .grades-more {
+    width: 100%;
+    min-width: 0;
+}
+
+@media (max-width: 480px) {
+    .grades-section.grades-full-width {
+        margin-bottom: 26px;
+    }
+}
+
+/* ==================================================
+   MATERIAL GRADES AND APPLICATIONS SECTION END
+================================================== */

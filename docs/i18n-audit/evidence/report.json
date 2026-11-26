@@ -1,0 +1,182 @@
+[
+ {
+  "lang": "en",
+  "dir": "ltr",
+  "h1": "Plate Weight Calculator",
+  "paintedFrames": 400,
+  "englishWordFrames": 400,
+  "firstEnglish": "Weight = @8458ms",
+  "first": "Weight = @8458ms",
+  "last": "Weight =",
+  "nodes": 912,
+  "result": "78.50 kg",
+  "translator": {
+   "touched": 0,
+   "h1After": "Plate Weight Calculator",
+   "reverted": true,
+   "passive": true
+  }
+ },
+ {
+  "lang": "mr",
+  "dir": "ltr",
+  "h1": "प्लेट वजन कॅल्क्युलेटर",
+  "paintedFrames": 114,
+  "englishWordFrames": 0,
+  "firstEnglish": null,
+  "first": "वजन = @1447ms",
+  "last": "वजन =",
+  "nodes": 935,
+  "result": "७८.५० kg",
+  "translator": {
+   "touched": 15,
+   "h1After": "Plate Weight Calculator",
+   "reverted": false,
+   "passive": true
+  }
+ },
+ {
+  "lang": "hi",
+  "dir": "ltr",
+  "h1": "प्लेट वजन कैलकुलेटर",
+  "paintedFrames": 107,
+  "englishWordFrames": 0,
+  "firstEnglish": null,
+  "first": "वजन = @1333ms",
+  "last": "वजन =",
+  "nodes": 935,
+  "result": "७८.५० kg",
+  "translator": {
+   "touched": 23,
+   "h1After": "प्लेट वजन Calculator",
+   "reverted": false,
+   "passive": true
+  }
+ },
+ {
+  "lang": "de",
+  "dir": "ltr",
+  "h1": "Plattengewichtsrechner",
+  "paintedFrames": 106,
+  "englishWordFrames": 0,
+  "firstEnglish": null,
+  "first": "Gewicht = @259ms",
+  "last": "Gewicht =",
+  "nodes": 935,
+  "result": "78,50 kg",
+  "translator": {
+   "touched": 0,
+   "h1After": "Plattengewichtsrechner",
+   "reverted": true,
+   "passive": true
+  }
+ },
+ {
+  "lang": "es",
+  "dir": "ltr",
+  "h1": "Calculadora del peso de la placa",
+  "paintedFrames": 118,
+  "englishWordFrames": 0,
+  "firstEnglish": null,
+  "first": "Peso = @112ms",
+  "last": "Peso =",
+  "nodes": 935,
+  "result": "78,50 kg",
+  "translator": {
+   "touched": 0,
+   "h1After": "Calculadora del peso de la pla",
+   "reverted": true,
+   "passive": true
+  }
+ },
+ {
+  "lang": "fr",
+  "dir": "ltr",
+  "h1": "Calculateur de poids de la plaque",
+  "paintedFrames": 106,
+  "englishWordFrames": 0,
+  "firstEnglish": null,
+  "first": "Poids = @97ms",
+  "last": "Poids =",
+  "nodes": 935,
+  "result": "78,50 kg",
+  "translator": {
+   "touched": 0,
+   "h1After": "Calculateur de poids de la pla",
+   "reverted": true,
+   "passive": true
+  }
+ },
+ {
+  "lang": "ja",
+  "dir": "ltr",
+  "h1": "板重量計算ツール",
+  "paintedFrames": 103,
+  "englishWordFrames": 0,
+  "firstEnglish": null,
+  "first": "重量 = @131ms",
+  "last": "重量 =",
+  "nodes": 935,
+  "result": "７８.５０ kg",
+  "translator": {
+   "touched": 0,
+   "h1After": "板重量計算ツール",
+   "reverted": true,
+   "passive": true
+  }
+ },
+ {
+  "lang": "zh",
+  "dir": "ltr",
+  "h1": "板重量计算器",
+  "paintedFrames": 127,
+  "englishWordFrames": 0,
+  "firstEnglish": null,
+  "first": "重量 = @172ms",
+  "last": "重量 =",
+  "nodes": 935,
+  "result": "78.50 kg",
+  "translator": {
+   "touched": 0,
+   "h1After": "板重量计算器",
+   "reverted": true,
+   "passive": true
+  }
+ },
+ {
+  "lang": "pt",
+  "dir": "ltr",
+  "h1": "Calculadora de Peso de Chapas",
+  "paintedFrames": 106,
+  "englishWordFrames": 0,
+  "firstEnglish": null,
+  "first": "Peso = @142ms",
+  "last": "Peso =",
+  "nodes": 920,
+  "result": "78,50 kg",
+  "translator": {
+   "touched": 0,
+   "h1After": "Calculadora de Peso de Chapas",
+   "reverted": true,
+   "passive": true
+  }
+ },
+ {
+  "lang": "ar",
+  "dir": "rtl",
+  "h1": "حاسبة وزن اللوحة",
+  "paintedFrames": 107,
+  "englishWordFrames": 0,
+  "firstEnglish": null,
+  "first": "الوزن = @5175ms",
+  "last": "الوزن =",
+  "nodes": 935,
+  "result": "٧٨.٥٠ kg",
+  "translator": {
+   "touched": 0,
+   "h1After": "حاسبة وزن اللوحة",
+   "reverted": true,
+   "passive": true
+  }
+ }
+]

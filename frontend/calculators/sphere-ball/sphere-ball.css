@@ -1,0 +1,44 @@
+﻿/* ==================================================
+   SPHERE / BALL CALCULATOR STYLESHEET START
+   Only the rules this calculator adds to calculator-base.css.
+================================================== */
+/* SPHERE ONLY: single front-view layout (side view removed) */
+.diagram-views-single {
+    justify-content: center;
+    max-width: 460px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.diagram-views-single .diagram-view {
+    flex: 0 1 auto;
+    width: 100%;
+    max-width: 460px;
+    max-height: 220px;
+}
+
+/* ==================================================
+   MOBILE RESPONSIVE STYLING (MAX-WIDTH) START
+   Layout changes for this screen size range.
+   Here are the layout changes for small and large screens.
+================================================== */
+@media (max-width: 520px) {
+    .diagram-views-single {
+        width: 100%;
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        gap: 0;
+    }
+
+    .diagram-views-single .diagram-view {
+        width: 100%;
+        max-width: 100%;
+        max-height: 200px;
+    }
+}
+
+/* ==================================================
+   SPHERE / BALL STYLESHEET END
+   This CSS file ends here.
+================================================== */

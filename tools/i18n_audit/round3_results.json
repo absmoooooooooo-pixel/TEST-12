@@ -1,0 +1,2228 @@
+[
+  {
+    "mode": "regression",
+    "page": "frontend/calculators/plate/index.html",
+    "snapshots": [
+      {
+        "label": "initial",
+        "probe": {
+          "customDensityValue": "7.85",
+          "customDensityRaw": "7.85",
+          "parsed": 7.85,
+          "parsedRaw": 7.85,
+          "lang": "en",
+          "error": "",
+          "resultsDisplay": "block"
+        },
+        "lang": "en",
+        "dir": "ltr",
+        "title": "Plate Weight Calculator | Metal Weight Calculator",
+        "hasMWNumber": true,
+        "inputs": [
+          {
+            "id": "length",
+            "value": "1000",
+            "raw": "1000",
+            "canonical": 1000
+          },
+          {
+            "id": "width",
+            "value": "100",
+            "raw": "100",
+            "canonical": 100
+          },
+          {
+            "id": "thickness",
+            "value": "10",
+            "raw": "10",
+            "canonical": 10
+          },
+          {
+            "id": "customDensity",
+            "value": "7.85",
+            "raw": "7.85",
+            "canonical": 7.85
+          },
+          {
+            "id": "quantity",
+            "value": "10",
+            "raw": "10",
+            "canonical": 10
+          },
+          {
+            "id": "calcMaterialComboSearch",
+            "value": "",
+            "raw": null,
+            "canonical": null
+          }
+        ],
+        "results": {
+          "densityInfo": 7.85,
+          "customDensity": 7.85,
+          "results": 78.5,
+          "singleWeight": 7.85,
+          "resultQuantity": 10,
+          "resultDensity": 7.85
+        },
+        "historyCount": 1,
+        "missing": [],
+        "keypad": []
+      },
+      {
+        "label": "en",
+        "probe": {
+          "customDensityValue": "7.85",
+          "customDensityRaw": "7.85",
+          "parsed": 7.85,
+          "parsedRaw": 7.85,
+          "lang": "en",
+          "error": "",
+          "resultsDisplay": "block"
+        },
+        "lang": "en",
+        "dir": "ltr",
+        "title": "Plate Weight Calculator | Metal Weight Calculator",
+        "hasMWNumber": true,
+        "inputs": [
+          {
+            "id": "length",
+            "value": "1000",
+            "raw": "1000",
+            "canonical": 1000
+          },
+          {
+            "id": "width",
+            "value": "100",
+            "raw": "100",
+            "canonical": 100
+          },
+          {
+            "id": "thickness",
+            "value": "10",
+            "raw": "10",
+            "canonical": 10
+          },
+          {
+            "id": "customDensity",
+            "value": "7.85",
+            "raw": "7.85",
+            "canonical": 7.85
+          },
+          {
+            "id": "quantity",
+            "value": "10",
+            "raw": "10",
+            "canonical": 10
+          },
+          {
+            "id": "calcMaterialComboSearch",
+            "value": "",
+            "raw": null,
+            "canonical": null
+          }
+        ],
+        "results": {
+          "densityInfo": 7.85,
+          "customDensity": 7.85,
+          "results": 78.5,
+          "singleWeight": 7.85,
+          "resultQuantity": 10,
+          "resultDensity": 7.85
+        },
+        "historyCount": 1,
+        "missing": [],
+        "keypad": []
+      },
+      {
+        "label": "hi",
+        "probe": {
+          "customDensityValue": "७.८५",
+          "customDensityRaw": "7.85",
+          "parsed": 7.85,
+          "parsedRaw": 7.85,
+          "lang": "hi",
+          "error": "",
+          "resultsDisplay": "block"
+        },
+        "lang": "hi",
+        "dir": "ltr",
+        "title": "प्लेट वजन कैलकुलेटर | मेटल वेट कैलकुलेटर",
+        "hasMWNumber": true,
+        "inputs": [
+          {
+            "id": "length",
+            "value": "१०००",
+            "raw": "1000",
+            "canonical": 1000
+          },
+          {
+            "id": "width",
+            "value": "१००",
+            "raw": "100",
+            "canonical": 100
+          },
+          {
+            "id": "thickness",
+            "value": "१०",
+            "raw": "10",
+            "canonical": 10
+          },
+          {
+            "id": "customDensity",
+            "value": "७.८५",
+            "raw": "7.85",
+            "canonical": 7.85
+          },
+          {
+            "id": "quantity",
+            "value": "१०",
+            "raw": "10",
+            "canonical": 10
+          },
+          {
+            "id": "calcMaterialComboSearch",
+            "value": "",
+            "raw": null,
+            "canonical": null
+          }
+        ],
+        "results": {
+          "densityInfo": 7.85,
+          "customDensity": 7.85,
+          "results": 78.5,
+          "singleWeight": 7.85,
+          "resultQuantity": 10,
+          "resultDensity": 7.85
+        },
+        "historyCount": 1,
+        "missing": [
+          "0.00100000 m³",
+          "1 calculation saved across all calculators.",
+          "L = 1,000",
+          "L: 1000 mm × W: 100 mm × T: 10 mm × QTY: 10",
+          "Nov 24, 2026, 08:33:25 PM",
+          "Open global calculation history, 1 calculation",
+          "QTY",
+          "T = 10",
+          "W = 100"
+        ],
+        "keypad": []
+      },
+      {
+        "label": "mr",
+        "probe": {
+          "customDensityValue": "७.८५",
+          "customDensityRaw": "7.85",
+          "parsed": 7.85,
+          "parsedRaw": 7.85,
+          "lang": "mr",
+          "error": "",
+          "resultsDisplay": "block"
+        },
+        "lang": "mr",
+        "dir": "ltr",
+        "title": "प्लेट वजन कॅल्क्युलेटर | मेटल वेट कॅल्क्युलेटर",
+        "hasMWNumber": true,
+        "inputs": [
+          {
+            "id": "length",
+            "value": "१०००",
+            "raw": "1000",
+            "canonical": 1000
+          },
+          {
+            "id": "width",
+            "value": "१००",
+            "raw": "100",
+            "canonical": 100
+          },
+          {
+            "id": "thickness",
+            "value": "१०",
+            "raw": "10",
+            "canonical": 10
+          },
+          {
+            "id": "customDensity",
+            "value": "७.८५",
+            "raw": "7.85",
+            "canonical": 7.85
+          },
+          {
+            "id": "quantity",
+            "value": "१०",
+            "raw": "10",
+            "canonical": 10
+          },
+          {
+            "id": "calcMaterialComboSearch",
+            "value": "",
+            "raw": null,
+            "canonical": null
+          }
+        ],
+        "results": {
+          "densityInfo": 7.85,
+          "customDensity": 7.85,
+          "results": 78.5,
+          "singleWeight": 7.85,
+          "resultQuantity": 10,
+          "resultDensity": 7.85
+        },
+        "historyCount": 1,
+        "missing": [
+          "QTY"
+        ],
+        "keypad": []
+      },
+      {
+        "label": "ja",
+        "probe": {
+          "customDensityValue": "７.８５",
+          "customDensityRaw": "7.85",
+          "parsed": 7.85,
+          "parsedRaw": 7.85,
+          "lang": "ja",
+          "error": "",
+          "resultsDisplay": "block"
+        },
+        "lang": "ja",
+        "dir": "ltr",
+        "title": "板重量計算ツール | 金属重量計算ツール",
+        "hasMWNumber": true,
+        "inputs": [
+          {
+            "id": "length",
+            "value": "１０００",
+            "raw": "1000",
+            "canonical": 1000
+          },
+          {
+            "id": "width",
+            "value": "１００",
+            "raw": "100",
+            "canonical": 100
+          },
+          {
+            "id": "thickness",
+            "value": "１０",
+            "raw": "10",
+            "canonical": 10
+          },
+          {
+            "id": "customDensity",
+            "value": "７.８５",
+            "raw": "7.85",
+            "canonical": 7.85
+          },
+          {
+            "id": "quantity",
+            "value": "１０",
+            "raw": "10",
+            "canonical": 10
+          },
+          {
+            "id": "calcMaterialComboSearch",
+            "value": "",
+            "raw": null,
+            "canonical": null
+          }
+        ],
+        "results": {
+          "densityInfo": 7.85,
+          "customDensity": 7.85,
+          "results": 78.5,
+          "singleWeight": 7.85,
+          "resultQuantity": 10,
+          "resultDensity": 7.85
+        },
+        "historyCount": 1,
+        "missing": [
+          "QTY"
+        ],
+        "keypad": []
+      },
+      {
+        "label": "zh",
+        "probe": {
+          "customDensityValue": "7.85",
+          "customDensityRaw": "7.85",
+          "parsed": 7.85,
+          "parsedRaw": 7.85,
+          "lang": "zh",
+          "error": "",
+          "resultsDisplay": "block"
+        },
+        "lang": "zh",
+        "dir": "ltr",
+        "title": "板重量计算器 | 金属重量计算器",
+        "hasMWNumber": true,
+        "inputs": [
+          {
+            "id": "length",
+            "value": "1000",
+            "raw": "1000",
+            "canonical": 1000
+          },
+          {
+            "id": "width",
+            "value": "100",
+            "raw": "100",
+            "canonical": 100
+          },
+          {
+            "id": "thickness",
+            "value": "10",
+            "raw": "10",
+            "canonical": 10
+          },
+          {
+            "id": "customDensity",
+            "value": "7.85",
+            "raw": "7.85",
+            "canonical": 7.85
+          },
+          {
+            "id": "quantity",
+            "value": "10",
+            "raw": "10",
+            "canonical": 10
+          },
+          {
+            "id": "calcMaterialComboSearch",
+            "value": "",
+            "raw": null,
+            "canonical": null
+          }
+        ],
+        "results": {
+          "densityInfo": 7.85,
+          "customDensity": 7.85,
+          "results": 78.5,
+          "singleWeight": 7.85,
+          "resultQuantity": 10,
+          "resultDensity": 7.85
+        },
+        "historyCount": 1,
+        "missing": [
+          "0.00100000 m³",
+          "L: 1000 mm × W: 100 mm × T: 10 mm × QTY: 10",
+          "QTY"
+        ],
+        "keypad": []
+      },
+      {
+        "label": "de",
+        "probe": {
+          "customDensityValue": "7,85",
+          "customDensityRaw": "7.85",
+          "parsed": 7.85,
+          "parsedRaw": 7.85,
+          "lang": "de",
+          "error": "",
+          "resultsDisplay": "block"
+        },
+        "lang": "de",
+        "dir": "ltr",
+        "title": "Plattengewichtsrechner | Metallgewicht-Rechner",
+        "hasMWNumber": true,
+        "inputs": [
+          {
+            "id": "length",
+            "value": "1000",
+            "raw": "1000",
+            "canonical": 1000
+          },
+          {
+            "id": "width",
+            "value": "100",
+            "raw": "100",
+            "canonical": 100
+          },
+          {
+            "id": "thickness",
+            "value": "10",
+            "raw": "10",
+            "canonical": 10
+          },
+          {
+            "id": "customDensity",
+            "value": "7,85",
+            "raw": "7.85",
+            "canonical": 7.85
+          },
+          {
+            "id": "quantity",
+            "value": "10",
+            "raw": "10",
+            "canonical": 10
+          },
+          {
+            "id": "calcMaterialComboSearch",
+            "value": "",
+            "raw": null,
+            "canonical": null
+          }
+        ],
+        "results": {
+          "densityInfo": 7.85,
+          "customDensity": 7.85,
+          "results": 78.5,
+          "singleWeight": 7.85,
+          "resultQuantity": 10,
+          "resultDensity": 7.85
+        },
+        "historyCount": 1,
+        "missing": [
+          "0,00100000 m³",
+          "0.00100000 m³",
+          "1 Berechnung in allen Rechnern gespeichert.",
+          "1,000 mm",
+          "1.000 mm",
+          "10 mm",
+          "100 mm",
+          "24. Nov. 2026, 20:33:25",
+          "7,85 g/cm³",
+          "L: 1000 mm × W: 100 mm × T: 10 mm × QTY: 10",
+          "QTY"
+        ],
+        "keypad": []
+      },
+      {
+        "label": "es",
+        "probe": {
+          "customDensityValue": "7,85",
+          "customDensityRaw": "7.85",
+          "parsed": 7.85,
+          "parsedRaw": 7.85,
+          "lang": "es",
+          "error": "",
+          "resultsDisplay": "block"
+        },
+        "lang": "es",
+        "dir": "ltr",
+        "title": "Calculadora del peso de la placa | Calculadora de peso de metales",
+        "hasMWNumber": true,
+        "inputs": [
+          {
+            "id": "length",
+            "value": "1000",
+            "raw": "1000",
+            "canonical": 1000
+          },
+          {
+            "id": "width",
+            "value": "100",
+            "raw": "100",
+            "canonical": 100
+          },
+          {
+            "id": "thickness",
+            "value": "10",
+            "raw": "10",
+            "canonical": 10
+          },
+          {
+            "id": "customDensity",
+            "value": "7,85",
+            "raw": "7.85",
+            "canonical": 7.85
+          },
+          {
+            "id": "quantity",
+            "value": "10",
+            "raw": "10",
+            "canonical": 10
+          },
+          {
+            "id": "calcMaterialComboSearch",
+            "value": "",
+            "raw": null,
+            "canonical": null
+          }
+        ],
+        "results": {
+          "densityInfo": 7.85,
+          "customDensity": 7.85,
+          "results": 78.5,
+          "singleWeight": 7.85,
+          "resultQuantity": 10,
+          "resultDensity": 7.85
+        },
+        "historyCount": 1,
+        "missing": [
+          "0,00100000 m³",
+          "1 Berechnung in allen Rechnern gespeichert.",
+          "1 cálculo guardado en todas las calculadoras.",
+          "1.000 mm",
+          "10 mm",
+          "100 mm",
+          "1000 mm",
+          "24 nov 2026, 20:33:25",
+          "24. Nov. 2026, 20:33:25",
+          "7,85 g/cm³",
+          "Globalen Berechnungsverlauf öffnen, 1 Berechnung",
+          "L: 1000 mm × W: 100 mm × T: 10 mm × QTY: 10",
+          "QTY"
+        ],
+        "keypad": []
+      },
+      {
+        "label": "fr",
+        "probe": {
+          "customDensityValue": "7,85",
+          "customDensityRaw": "7.85",
+          "parsed": 7.85,
+          "parsedRaw": 7.85,
+          "lang": "fr",
+          "error": "",
+          "resultsDisplay": "block"
+        },
+        "lang": "fr",
+        "dir": "ltr",
+        "title": "Calculateur de poids de la plaque | Calculateur de poids des métaux",
+        "hasMWNumber": true,
+        "inputs": [
+          {
+            "id": "length",
+            "value": "1000",
+            "raw": "1000",
+            "canonical": 1000
+          },
+          {
+            "id": "width",
+            "value": "100",
+            "raw": "100",
+            "canonical": 100
+          },
+          {
+            "id": "thickness",
+            "value": "10",
+            "raw": "10",
+            "canonical": 10
+          },
+          {
+            "id": "customDensity",
+            "value": "7,85",
+            "raw": "7.85",
+            "canonical": 7.85
+          },
+          {
+            "id": "quantity",
+            "value": "10",
+            "raw": "10",
+            "canonical": 10
+          },
+          {
+            "id": "calcMaterialComboSearch",
+            "value": "",
+            "raw": null,
+            "canonical": null
+          }
+        ],
+        "results": {
+          "densityInfo": 7.85,
+          "customDensity": 7.85,
+          "results": 78.5,
+          "singleWeight": 7.85,
+          "resultQuantity": 10,
+          "resultDensity": 7.85
+        },
+        "historyCount": 1,
+        "missing": [
+          "0,00100000 m³",
+          "1 calcul enregistré dans tous les calculateurs.",
+          "1 cálculo guardado en todas las calculadoras.",
+          "10 mm",
+          "100 mm",
+          "1000 mm",
+          "1 000 mm",
+          "24 nov 2026, 20:33:25",
+          "24 nov. 2026, 20:33:25",
+          "7,85 g/cm³",
+          "Abrir el historial global de cálculos, 1 cálculo",
+          "L: 1000 mm × W: 100 mm × T: 10 mm × QTY: 10",
+          "QTY"
+        ],
+        "keypad": []
+      },
+      {
+        "label": "pt",
+        "probe": {
+          "customDensityValue": "7,85",
+          "customDensityRaw": "7.85",
+          "parsed": 7.85,
+          "parsedRaw": 7.85,
+          "lang": "pt",
+          "error": "",
+          "resultsDisplay": "block"
+        },
+        "lang": "pt",
+        "dir": "ltr",
+        "title": "Calculadora de peso da placa | Calculadora de Peso de Metais",
+        "hasMWNumber": true,
+        "inputs": [
+          {
+            "id": "length",
+            "value": "1000",
+            "raw": "1000",
+            "canonical": 1000
+          },
+          {
+            "id": "width",
+            "value": "100",
+            "raw": "100",
+            "canonical": 100
+          },
+          {
+            "id": "thickness",
+            "value": "10",
+            "raw": "10",
+            "canonical": 10
+          },
+          {
+            "id": "customDensity",
+            "value": "7,85",
+            "raw": "7.85",
+            "canonical": 7.85
+          },
+          {
+            "id": "quantity",
+            "value": "10",
+            "raw": "10",
+            "canonical": 10
+          },
+          {
+            "id": "calcMaterialComboSearch",
+            "value": "",
+            "raw": null,
+            "canonical": null
+          }
+        ],
+        "results": {
+          "densityInfo": 7.85,
+          "customDensity": 7.85,
+          "results": 78.5,
+          "singleWeight": 7.85,
+          "resultQuantity": 10,
+          "resultDensity": 7.85
+        },
+        "historyCount": 1,
+        "missing": [
+          "0,00100000 m³",
+          "1 calcul enregistré dans tous les calculateurs.",
+          "1 cálculo salvo em todas as calculadoras.",
+          "1.000 mm",
+          "10 mm",
+          "100 mm",
+          "1 000 mm",
+          "24 de nov. de 2026, 20:33:25",
+          "24 nov. 2026, 20:33:25",
+          "7,85 g/cm³",
+          "L: 1000 mm × W: 100 mm × T: 10 mm × QTY: 10",
+          "Ouvrir l'historique global des calculs, 1 calcul",
+          "QTY"
+        ],
+        "keypad": []
+      },
+      {
+        "label": "ar",
+        "probe": {
+          "customDensityValue": "٧٫٨٥",
+          "customDensityRaw": "7.85",
+          "parsed": 7.85,
+          "parsedRaw": 7.85,
+          "lang": "ar",
+          "error": "",
+          "resultsDisplay": "block"
+        },
+        "lang": "ar",
+        "dir": "rtl",
+        "title": "حاسبة وزن اللوحة | حاسبة وزن المعادن",
+        "hasMWNumber": true,
+        "inputs": [
+          {
+            "id": "length",
+            "value": "١٠٠٠",
+            "raw": "1000",
+            "canonical": 1000
+          },
+          {
+            "id": "width",
+            "value": "١٠٠",
+            "raw": "100",
+            "canonical": 100
+          },
+          {
+            "id": "thickness",
+            "value": "١٠",
+            "raw": "10",
+            "canonical": 10
+          },
+          {
+            "id": "customDensity",
+            "value": "٧٫٨٥",
+            "raw": "7.85",
+            "canonical": 7.85
+          },
+          {
+            "id": "quantity",
+            "value": "١٠",
+            "raw": "10",
+            "canonical": 10
+          },
+          {
+            "id": "calcMaterialComboSearch",
+            "value": "",
+            "raw": null,
+            "canonical": null
+          }
+        ],
+        "results": {
+          "densityInfo": 7.85,
+          "customDensity": 7.85,
+          "results": 78.5,
+          "singleWeight": 7.85,
+          "resultQuantity": 10,
+          "resultDensity": 7.85
+        },
+        "historyCount": 1,
+        "missing": [
+          "0,00100000 m³",
+          "1 cálculo salvo em todas as calculadoras.",
+          "24 de nov. de 2026, 20:33:25",
+          "7,85 g/cm³",
+          "Abrir o histórico global de cálculos, 1 cálculo",
+          "L: 1000 mm × W: 100 mm × T: 10 mm × QTY: 10",
+          "QTY"
+        ],
+        "keypad": []
+      },
+      {
+        "label": "navigated",
+        "probe": {},
+        "lang": "ar",
+        "dir": "rtl",
+        "title": "من نحن | حاسبة وزن المعادن",
+        "hasMWNumber": true,
+        "inputs": [],
+        "results": {},
+        "historyCount": 1,
+        "missing": [],
+        "keypad": []
+      },
+      {
+        "label": "reloaded",
+        "probe": {
+          "customDensityValue": "",
+          "customDensityRaw": "",
+          "parsed": null,
+          "parsedRaw": null,
+          "lang": "ar",
+          "error": "",
+          "resultsDisplay": ""
+        },
+        "lang": "ar",
+        "dir": "rtl",
+        "title": "حاسبة وزن اللوحة | حاسبة وزن المعادن",
+        "hasMWNumber": true,
+        "inputs": [
+          {
+            "id": "length",
+            "value": "",
+            "raw": "",
+            "canonical": null
+          },
+          {
+            "id": "width",
+            "value": "",
+            "raw": "",
+            "canonical": null
+          },
+          {
+            "id": "thickness",
+            "value": "",
+            "raw": "",
+            "canonical": null
+          },
+          {
+            "id": "customDensity",
+            "value": "",
+            "raw": "",
+            "canonical": null
+          },
+          {
+            "id": "quantity",
+            "value": "١",
+            "raw": "1",
+            "canonical": 1
+          },
+          {
+            "id": "calcMaterialComboSearch",
+            "value": "",
+            "raw": null,
+            "canonical": null
+          }
+        ],
+        "results": {
+          "densityInfo": 7.85,
+          "results": 0,
+          "singleWeight": 0,
+          "resultQuantity": 1,
+          "resultDensity": 7.85
+        },
+        "historyCount": 1,
+        "missing": [
+          "1 calculation saved across all calculators.",
+          "L: 1000 mm × W: 100 mm × T: 10 mm × QTY: 10",
+          "Nov 24, 2026, 08:33:25 PM",
+          "Open global calculation history, 1 calculation",
+          "QTY"
+        ],
+        "keypad": []
+      },
+      {
+        "label": "recalculated",
+        "probe": {
+          "customDensityValue": "٧٫٨٥",
+          "customDensityRaw": "7.85",
+          "parsed": 7.85,
+          "parsedRaw": 7.85,
+          "lang": "ar",
+          "error": "",
+          "resultsDisplay": "block"
+        },
+        "lang": "ar",
+        "dir": "rtl",
+        "title": "حاسبة وزن اللوحة | حاسبة وزن المعادن",
+        "hasMWNumber": true,
+        "inputs": [
+          {
+            "id": "length",
+            "value": "١٠٠٠",
+            "raw": "1000",
+            "canonical": 1000
+          },
+          {
+            "id": "width",
+            "value": "١٠٠",
+            "raw": "100",
+            "canonical": 100
+          },
+          {
+            "id": "thickness",
+            "value": "١٠",
+            "raw": "10",
+            "canonical": 10
+          },
+          {
+            "id": "customDensity",
+            "value": "٧٫٨٥",
+            "raw": "7.85",
+            "canonical": 7.85
+          },
+          {
+            "id": "quantity",
+            "value": "١٠",
+            "raw": "10",
+            "canonical": 10
+          },
+          {
+            "id": "calcMaterialComboSearch",
+            "value": "",
+            "raw": null,
+            "canonical": null
+          }
+        ],
+        "results": {
+          "densityInfo": 7.85,
+          "customDensity": 7.85,
+          "results": 78.5,
+          "singleWeight": 7.85,
+          "resultQuantity": 10,
+          "resultDensity": 7.85
+        },
+        "historyCount": 1,
+        "missing": [
+          "1 calculation saved across all calculators.",
+          "L: 1000 mm × W: 100 mm × T: 10 mm × QTY: 10",
+          "Nov 24, 2026, 08:33:25 PM",
+          "Open global calculation history, 1 calculation",
+          "QTY"
+        ],
+        "keypad": []
+      }
+    ],
+    "checks": [
+      {
+        "name": "MWNumber available",
+        "pass": true,
+        "detail": "frontend/calculators/plate/index.html"
+      },
+      {
+        "name": "results unchanged across languages",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "name": "inputs unchanged across languages",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "name": "no missing translations",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "name": "direction correct",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "name": "keypad localized",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "name": "history stable",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "name": "language persists across navigation",
+        "pass": true,
+        "detail": "ar != ar"
+      },
+      {
+        "name": "language persists after reload",
+        "pass": true,
+        "detail": "ar != ar"
+      },
+      {
+        "name": "recalculation after reload matches",
+        "pass": true,
+        "detail": ""
+      }
+    ],
+    "errors": [],
+    "calculateTarget": "calculateBtn",
+    "viewport": "desktop"
+  },
+  {
+    "mode": "regression",
+    "page": "frontend/calculators/plate/index.html",
+    "snapshots": [
+      {
+        "label": "initial",
+        "probe": {
+          "customDensityValue": "7.85",
+          "customDensityRaw": null,
+          "parsed": 7.85,
+          "parsedRaw": 7.85,
+          "lang": "en",
+          "error": "",
+          "resultsDisplay": "block"
+        },
+        "lang": "en",
+        "dir": "ltr",
+        "title": "Plate Weight Calculator | Metal Weight Calculator",
+        "hasMWNumber": true,
+        "inputs": [
+          {
+            "id": "length",
+            "value": "1000",
+            "raw": null,
+            "canonical": 1000
+          },
+          {
+            "id": "width",
+            "value": "100",
+            "raw": null,
+            "canonical": 100
+          },
+          {
+            "id": "thickness",
+            "value": "10",
+            "raw": null,
+            "canonical": 10
+          },
+          {
+            "id": "customDensity",
+            "value": "7.85",
+            "raw": null,
+            "canonical": 7.85
+          },
+          {
+            "id": "quantity",
+            "value": "10",
+            "raw": null,
+            "canonical": 10
+          },
+          {
+            "id": "calcMaterialComboSearch",
+            "value": "",
+            "raw": null,
+            "canonical": null
+          }
+        ],
+        "results": {
+          "densityInfo": 7.85,
+          "customDensity": 7.85,
+          "results": 78.5,
+          "singleWeight": 7.85,
+          "resultQuantity": 10,
+          "resultDensity": 7.85
+        },
+        "historyCount": 1,
+        "missing": [],
+        "keypad": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "Next",
+          "7",
+          "8",
+          "9",
+          ".",
+          "0"
+        ]
+      },
+      {
+        "label": "en",
+        "probe": {
+          "customDensityValue": "7.85",
+          "customDensityRaw": null,
+          "parsed": 7.85,
+          "parsedRaw": 7.85,
+          "lang": "en",
+          "error": "",
+          "resultsDisplay": "block"
+        },
+        "lang": "en",
+        "dir": "ltr",
+        "title": "Plate Weight Calculator | Metal Weight Calculator",
+        "hasMWNumber": true,
+        "inputs": [
+          {
+            "id": "length",
+            "value": "1000",
+            "raw": null,
+            "canonical": 1000
+          },
+          {
+            "id": "width",
+            "value": "100",
+            "raw": null,
+            "canonical": 100
+          },
+          {
+            "id": "thickness",
+            "value": "10",
+            "raw": null,
+            "canonical": 10
+          },
+          {
+            "id": "customDensity",
+            "value": "7.85",
+            "raw": null,
+            "canonical": 7.85
+          },
+          {
+            "id": "quantity",
+            "value": "10",
+            "raw": null,
+            "canonical": 10
+          },
+          {
+            "id": "calcMaterialComboSearch",
+            "value": "",
+            "raw": null,
+            "canonical": null
+          }
+        ],
+        "results": {
+          "densityInfo": 7.85,
+          "customDensity": 7.85,
+          "results": 78.5,
+          "singleWeight": 7.85,
+          "resultQuantity": 10,
+          "resultDensity": 7.85
+        },
+        "historyCount": 1,
+        "missing": [],
+        "keypad": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "Next",
+          "7",
+          "8",
+          "9",
+          ".",
+          "0"
+        ]
+      },
+      {
+        "label": "hi",
+        "probe": {
+          "customDensityValue": "7.85",
+          "customDensityRaw": null,
+          "parsed": 7.85,
+          "parsedRaw": 7.85,
+          "lang": "hi",
+          "error": "",
+          "resultsDisplay": "block"
+        },
+        "lang": "hi",
+        "dir": "ltr",
+        "title": "प्लेट वजन कैलकुलेटर | मेटल वेट कैलकुलेटर",
+        "hasMWNumber": true,
+        "inputs": [
+          {
+            "id": "length",
+            "value": "1000",
+            "raw": null,
+            "canonical": 1000
+          },
+          {
+            "id": "width",
+            "value": "100",
+            "raw": null,
+            "canonical": 100
+          },
+          {
+            "id": "thickness",
+            "value": "10",
+            "raw": null,
+            "canonical": 10
+          },
+          {
+            "id": "customDensity",
+            "value": "7.85",
+            "raw": null,
+            "canonical": 7.85
+          },
+          {
+            "id": "quantity",
+            "value": "10",
+            "raw": null,
+            "canonical": 10
+          },
+          {
+            "id": "calcMaterialComboSearch",
+            "value": "",
+            "raw": null,
+            "canonical": null
+          }
+        ],
+        "results": {
+          "densityInfo": 7.85,
+          "customDensity": 7.85,
+          "results": 78.5,
+          "singleWeight": 7.85,
+          "resultQuantity": 10,
+          "resultDensity": 7.85
+        },
+        "historyCount": 1,
+        "missing": [
+          ".",
+          "0",
+          "0.00100000 m³",
+          "1 calculation saved across all calculators.",
+          "2",
+          "7",
+          "9",
+          "L = 1,000",
+          "L: 1000 mm × W: 100 mm × T: 10 mm × QTY: 10",
+          "Nov 24, 2026, 08:33:42 PM",
+          "Open global calculation history, 1 calculation",
+          "QTY",
+          "T = 10",
+          "W = 100"
+        ],
+        "keypad": [
+          "१",
+          "२",
+          "३",
+          "४",
+          "५",
+          "६",
+          "अगला",
+          "७",
+          "८",
+          "९",
+          ".",
+          "०"
+        ]
+      },
+      {
+        "label": "mr",
+        "probe": {
+          "customDensityValue": "7.85",
+          "customDensityRaw": null,
+          "parsed": 7.85,
+          "parsedRaw": 7.85,
+          "lang": "mr",
+          "error": "",
+          "resultsDisplay": "block"
+        },
+        "lang": "mr",
+        "dir": "ltr",
+        "title": "प्लेट वजन कॅल्क्युलेटर | मेटल वेट कॅल्क्युलेटर",
+        "hasMWNumber": true,
+        "inputs": [
+          {
+            "id": "length",
+            "value": "1000",
+            "raw": null,
+            "canonical": 1000
+          },
+          {
+            "id": "width",
+            "value": "100",
+            "raw": null,
+            "canonical": 100
+          },
+          {
+            "id": "thickness",
+            "value": "10",
+            "raw": null,
+            "canonical": 10
+          },
+          {
+            "id": "customDensity",
+            "value": "7.85",
+            "raw": null,
+            "canonical": 7.85
+          },
+          {
+            "id": "quantity",
+            "value": "10",
+            "raw": null,
+            "canonical": 10
+          },
+          {
+            "id": "calcMaterialComboSearch",
+            "value": "",
+            "raw": null,
+            "canonical": null
+          }
+        ],
+        "results": {
+          "densityInfo": 7.85,
+          "customDensity": 7.85,
+          "results": 78.5,
+          "singleWeight": 7.85,
+          "resultQuantity": 10,
+          "resultDensity": 7.85
+        },
+        "historyCount": 1,
+        "missing": [
+          "0",
+          "2",
+          "7",
+          "9",
+          "QTY"
+        ],
+        "keypad": [
+          "१",
+          "२",
+          "३",
+          "४",
+          "५",
+          "६",
+          "पुढे",
+          "७",
+          "८",
+          "९",
+          ".",
+          "०"
+        ]
+      },
+      {
+        "label": "ja",
+        "probe": {
+          "customDensityValue": "7.85",
+          "customDensityRaw": null,
+          "parsed": 7.85,
+          "parsedRaw": 7.85,
+          "lang": "ja",
+          "error": "",
+          "resultsDisplay": "block"
+        },
+        "lang": "ja",
+        "dir": "ltr",
+        "title": "板重量計算ツール | 金属重量計算ツール",
+        "hasMWNumber": true,
+        "inputs": [
+          {
+            "id": "length",
+            "value": "1000",
+            "raw": null,
+            "canonical": 1000
+          },
+          {
+            "id": "width",
+            "value": "100",
+            "raw": null,
+            "canonical": 100
+          },
+          {
+            "id": "thickness",
+            "value": "10",
+            "raw": null,
+            "canonical": 10
+          },
+          {
+            "id": "customDensity",
+            "value": "7.85",
+            "raw": null,
+            "canonical": 7.85
+          },
+          {
+            "id": "quantity",
+            "value": "10",
+            "raw": null,
+            "canonical": 10
+          },
+          {
+            "id": "calcMaterialComboSearch",
+            "value": "",
+            "raw": null,
+            "canonical": null
+          }
+        ],
+        "results": {
+          "densityInfo": 7.85,
+          "customDensity": 7.85,
+          "results": 78.5,
+          "singleWeight": 7.85,
+          "resultQuantity": 10,
+          "resultDensity": 7.85
+        },
+        "historyCount": 1,
+        "missing": [
+          "0",
+          "2",
+          "7",
+          "9",
+          "QTY"
+        ],
+        "keypad": [
+          "１",
+          "２",
+          "３",
+          "４",
+          "５",
+          "６",
+          "次へ",
+          "７",
+          "８",
+          "９",
+          ".",
+          "０"
+        ]
+      },
+      {
+        "label": "zh",
+        "probe": {
+          "customDensityValue": "7.85",
+          "customDensityRaw": null,
+          "parsed": 7.85,
+          "parsedRaw": 7.85,
+          "lang": "zh",
+          "error": "",
+          "resultsDisplay": "block"
+        },
+        "lang": "zh",
+        "dir": "ltr",
+        "title": "板重量计算器 | 金属重量计算器",
+        "hasMWNumber": true,
+        "inputs": [
+          {
+            "id": "length",
+            "value": "1000",
+            "raw": null,
+            "canonical": 1000
+          },
+          {
+            "id": "width",
+            "value": "100",
+            "raw": null,
+            "canonical": 100
+          },
+          {
+            "id": "thickness",
+            "value": "10",
+            "raw": null,
+            "canonical": 10
+          },
+          {
+            "id": "customDensity",
+            "value": "7.85",
+            "raw": null,
+            "canonical": 7.85
+          },
+          {
+            "id": "quantity",
+            "value": "10",
+            "raw": null,
+            "canonical": 10
+          },
+          {
+            "id": "calcMaterialComboSearch",
+            "value": "",
+            "raw": null,
+            "canonical": null
+          }
+        ],
+        "results": {
+          "densityInfo": 7.85,
+          "customDensity": 7.85,
+          "results": 78.5,
+          "singleWeight": 7.85,
+          "resultQuantity": 10,
+          "resultDensity": 7.85
+        },
+        "historyCount": 1,
+        "missing": [
+          "0",
+          "0.00100000 m³",
+          "2",
+          "7",
+          "9",
+          "L: 1000 mm × W: 100 mm × T: 10 mm × QTY: 10",
+          "QTY"
+        ],
+        "keypad": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "下一步",
+          "7",
+          "8",
+          "9",
+          ".",
+          "0"
+        ]
+      },
+      {
+        "label": "de",
+        "probe": {
+          "customDensityValue": "7.85",
+          "customDensityRaw": null,
+          "parsed": 7.85,
+          "parsedRaw": 7.85,
+          "lang": "de",
+          "error": "",
+          "resultsDisplay": "block"
+        },
+        "lang": "de",
+        "dir": "ltr",
+        "title": "Plattengewichtsrechner | Metallgewicht-Rechner",
+        "hasMWNumber": true,
+        "inputs": [
+          {
+            "id": "length",
+            "value": "1000",
+            "raw": null,
+            "canonical": 1000
+          },
+          {
+            "id": "width",
+            "value": "100",
+            "raw": null,
+            "canonical": 100
+          },
+          {
+            "id": "thickness",
+            "value": "10",
+            "raw": null,
+            "canonical": 10
+          },
+          {
+            "id": "customDensity",
+            "value": "7.85",
+            "raw": null,
+            "canonical": 7.85
+          },
+          {
+            "id": "quantity",
+            "value": "10",
+            "raw": null,
+            "canonical": 10
+          },
+          {
+            "id": "calcMaterialComboSearch",
+            "value": "",
+            "raw": null,
+            "canonical": null
+          }
+        ],
+        "results": {
+          "densityInfo": 7.85,
+          "customDensity": 7.85,
+          "results": 78.5,
+          "singleWeight": 7.85,
+          "resultQuantity": 10,
+          "resultDensity": 7.85
+        },
+        "historyCount": 1,
+        "missing": [
+          "0",
+          "0,00100000 m³",
+          "0.00100000 m³",
+          "1 Berechnung in allen Rechnern gespeichert.",
+          "1,000 mm",
+          "1.000 mm",
+          "10 mm",
+          "100 mm",
+          "2",
+          "24. Nov. 2026, 20:33:42",
+          "7",
+          "7,85 g/cm³",
+          "9",
+          "L: 1000 mm × W: 100 mm × T: 10 mm × QTY: 10",
+          "QTY"
+        ],
+        "keypad": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "Weiter",
+          "7",
+          "8",
+          "9",
+          ",",
+          "0"
+        ]
+      },
+      {
+        "label": "es",
+        "probe": {
+          "customDensityValue": "7.85",
+          "customDensityRaw": null,
+          "parsed": 7.85,
+          "parsedRaw": 7.85,
+          "lang": "es",
+          "error": "",
+          "resultsDisplay": "block"
+        },
+        "lang": "es",
+        "dir": "ltr",
+        "title": "Calculadora del peso de la placa | Calculadora de peso de metales",
+        "hasMWNumber": true,
+        "inputs": [
+          {
+            "id": "length",
+            "value": "1000",
+            "raw": null,
+            "canonical": 1000
+          },
+          {
+            "id": "width",
+            "value": "100",
+            "raw": null,
+            "canonical": 100
+          },
+          {
+            "id": "thickness",
+            "value": "10",
+            "raw": null,
+            "canonical": 10
+          },
+          {
+            "id": "customDensity",
+            "value": "7.85",
+            "raw": null,
+            "canonical": 7.85
+          },
+          {
+            "id": "quantity",
+            "value": "10",
+            "raw": null,
+            "canonical": 10
+          },
+          {
+            "id": "calcMaterialComboSearch",
+            "value": "",
+            "raw": null,
+            "canonical": null
+          }
+        ],
+        "results": {
+          "densityInfo": 7.85,
+          "customDensity": 7.85,
+          "results": 78.5,
+          "singleWeight": 7.85,
+          "resultQuantity": 10,
+          "resultDensity": 7.85
+        },
+        "historyCount": 1,
+        "missing": [
+          "0",
+          "0,00100000 m³",
+          "1 Berechnung in allen Rechnern gespeichert.",
+          "1 cálculo guardado en todas las calculadoras.",
+          "1.000 mm",
+          "10 mm",
+          "100 mm",
+          "1000 mm",
+          "2",
+          "24 nov 2026, 20:33:42",
+          "24. Nov. 2026, 20:33:42",
+          "7",
+          "7,85 g/cm³",
+          "9",
+          "Globalen Berechnungsverlauf öffnen, 1 Berechnung",
+          "L: 1000 mm × W: 100 mm × T: 10 mm × QTY: 10",
+          "QTY"
+        ],
+        "keypad": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "Siguiente",
+          "7",
+          "8",
+          "9",
+          ",",
+          "0"
+        ]
+      },
+      {
+        "label": "fr",
+        "probe": {
+          "customDensityValue": "7.85",
+          "customDensityRaw": null,
+          "parsed": 7.85,
+          "parsedRaw": 7.85,
+          "lang": "fr",
+          "error": "",
+          "resultsDisplay": "block"
+        },
+        "lang": "fr",
+        "dir": "ltr",
+        "title": "Calculateur de poids de la plaque | Calculateur de poids des métaux",
+        "hasMWNumber": true,
+        "inputs": [
+          {
+            "id": "length",
+            "value": "1000",
+            "raw": null,
+            "canonical": 1000
+          },
+          {
+            "id": "width",
+            "value": "100",
+            "raw": null,
+            "canonical": 100
+          },
+          {
+            "id": "thickness",
+            "value": "10",
+            "raw": null,
+            "canonical": 10
+          },
+          {
+            "id": "customDensity",
+            "value": "7.85",
+            "raw": null,
+            "canonical": 7.85
+          },
+          {
+            "id": "quantity",
+            "value": "10",
+            "raw": null,
+            "canonical": 10
+          },
+          {
+            "id": "calcMaterialComboSearch",
+            "value": "",
+            "raw": null,
+            "canonical": null
+          }
+        ],
+        "results": {
+          "densityInfo": 7.85,
+          "customDensity": 7.85,
+          "results": 78.5,
+          "singleWeight": 7.85,
+          "resultQuantity": 10,
+          "resultDensity": 7.85
+        },
+        "historyCount": 1,
+        "missing": [
+          "0",
+          "0,00100000 m³",
+          "1 calcul enregistré dans tous les calculateurs.",
+          "1 cálculo guardado en todas las calculadoras.",
+          "10 mm",
+          "100 mm",
+          "1000 mm",
+          "1 000 mm",
+          "2",
+          "24 nov 2026, 20:33:42",
+          "24 nov. 2026, 20:33:42",
+          "7",
+          "7,85 g/cm³",
+          "9",
+          "Abrir el historial global de cálculos, 1 cálculo",
+          "L: 1000 mm × W: 100 mm × T: 10 mm × QTY: 10",
+          "QTY"
+        ],
+        "keypad": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "Suivant",
+          "7",
+          "8",
+          "9",
+          ",",
+          "0"
+        ]
+      },
+      {
+        "label": "pt",
+        "probe": {
+          "customDensityValue": "7.85",
+          "customDensityRaw": null,
+          "parsed": 7.85,
+          "parsedRaw": 7.85,
+          "lang": "pt",
+          "error": "",
+          "resultsDisplay": "block"
+        },
+        "lang": "pt",
+        "dir": "ltr",
+        "title": "Calculadora de peso da placa | Calculadora de Peso de Metais",
+        "hasMWNumber": true,
+        "inputs": [
+          {
+            "id": "length",
+            "value": "1000",
+            "raw": null,
+            "canonical": 1000
+          },
+          {
+            "id": "width",
+            "value": "100",
+            "raw": null,
+            "canonical": 100
+          },
+          {
+            "id": "thickness",
+            "value": "10",
+            "raw": null,
+            "canonical": 10
+          },
+          {
+            "id": "customDensity",
+            "value": "7.85",
+            "raw": null,
+            "canonical": 7.85
+          },
+          {
+            "id": "quantity",
+            "value": "10",
+            "raw": null,
+            "canonical": 10
+          },
+          {
+            "id": "calcMaterialComboSearch",
+            "value": "",
+            "raw": null,
+            "canonical": null
+          }
+        ],
+        "results": {
+          "densityInfo": 7.85,
+          "customDensity": 7.85,
+          "results": 78.5,
+          "singleWeight": 7.85,
+          "resultQuantity": 10,
+          "resultDensity": 7.85
+        },
+        "historyCount": 1,
+        "missing": [
+          "0",
+          "0,00100000 m³",
+          "1 calcul enregistré dans tous les calculateurs.",
+          "1 cálculo salvo em todas as calculadoras.",
+          "1.000 mm",
+          "10 mm",
+          "100 mm",
+          "1 000 mm",
+          "2",
+          "24 de nov. de 2026, 20:33:42",
+          "24 nov. 2026, 20:33:42",
+          "7",
+          "7,85 g/cm³",
+          "9",
+          "L: 1000 mm × W: 100 mm × T: 10 mm × QTY: 10",
+          "Ouvrir l'historique global des calculs, 1 calcul",
+          "QTY"
+        ],
+        "keypad": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "Próximo",
+          "7",
+          "8",
+          "9",
+          ",",
+          "0"
+        ]
+      },
+      {
+        "label": "ar",
+        "probe": {
+          "customDensityValue": "7.85",
+          "customDensityRaw": null,
+          "parsed": 7.85,
+          "parsedRaw": 7.85,
+          "lang": "ar",
+          "error": "",
+          "resultsDisplay": "block"
+        },
+        "lang": "ar",
+        "dir": "rtl",
+        "title": "حاسبة وزن اللوحة | حاسبة وزن المعادن",
+        "hasMWNumber": true,
+        "inputs": [
+          {
+            "id": "length",
+            "value": "1000",
+            "raw": null,
+            "canonical": 1000
+          },
+          {
+            "id": "width",
+            "value": "100",
+            "raw": null,
+            "canonical": 100
+          },
+          {
+            "id": "thickness",
+            "value": "10",
+            "raw": null,
+            "canonical": 10
+          },
+          {
+            "id": "customDensity",
+            "value": "7.85",
+            "raw": null,
+            "canonical": 7.85
+          },
+          {
+            "id": "quantity",
+            "value": "10",
+            "raw": null,
+            "canonical": 10
+          },
+          {
+            "id": "calcMaterialComboSearch",
+            "value": "",
+            "raw": null,
+            "canonical": null
+          }
+        ],
+        "results": {
+          "densityInfo": 7.85,
+          "customDensity": 7.85,
+          "results": 78.5,
+          "singleWeight": 7.85,
+          "resultQuantity": 10,
+          "resultDensity": 7.85
+        },
+        "historyCount": 1,
+        "missing": [
+          "0",
+          "0,00100000 m³",
+          "1 cálculo salvo em todas as calculadoras.",
+          "2",
+          "24 de nov. de 2026, 20:33:42",
+          "7",
+          "7,85 g/cm³",
+          "9",
+          "Abrir o histórico global de cálculos, 1 cálculo",
+          "L: 1000 mm × W: 100 mm × T: 10 mm × QTY: 10",
+          "QTY"
+        ],
+        "keypad": [
+          "١",
+          "٢",
+          "٣",
+          "٤",
+          "٥",
+          "٦",
+          "التالي",
+          "٧",
+          "٨",
+          "٩",
+          "٫",
+          "٠"
+        ]
+      },
+      {
+        "label": "navigated",
+        "probe": {},
+        "lang": "ar",
+        "dir": "rtl",
+        "title": "من نحن | حاسبة وزن المعادن",
+        "hasMWNumber": true,
+        "inputs": [],
+        "results": {},
+        "historyCount": 1,
+        "missing": [],
+        "keypad": []
+      },
+      {
+        "label": "reloaded",
+        "probe": {
+          "customDensityValue": "",
+          "customDensityRaw": null,
+          "parsed": null,
+          "parsedRaw": null,
+          "lang": "ar",
+          "error": "",
+          "resultsDisplay": ""
+        },
+        "lang": "ar",
+        "dir": "rtl",
+        "title": "حاسبة وزن اللوحة | حاسبة وزن المعادن",
+        "hasMWNumber": true,
+        "inputs": [
+          {
+            "id": "length",
+            "value": "",
+            "raw": null,
+            "canonical": null
+          },
+          {
+            "id": "width",
+            "value": "",
+            "raw": null,
+            "canonical": null
+          },
+          {
+            "id": "thickness",
+            "value": "",
+            "raw": null,
+            "canonical": null
+          },
+          {
+            "id": "customDensity",
+            "value": "",
+            "raw": null,
+            "canonical": null
+          },
+          {
+            "id": "quantity",
+            "value": "1",
+            "raw": null,
+            "canonical": 1
+          },
+          {
+            "id": "calcMaterialComboSearch",
+            "value": "",
+            "raw": null,
+            "canonical": null
+          }
+        ],
+        "results": {
+          "densityInfo": 7.85,
+          "results": 0,
+          "singleWeight": 0,
+          "resultQuantity": 1,
+          "resultDensity": 7.85
+        },
+        "historyCount": 1,
+        "missing": [
+          "1 calculation saved across all calculators.",
+          "L: 1000 mm × W: 100 mm × T: 10 mm × QTY: 10",
+          "Nov 24, 2026, 08:33:42 PM",
+          "Open global calculation history, 1 calculation",
+          "QTY"
+        ],
+        "keypad": [
+          "١",
+          "٢",
+          "٣",
+          "٤",
+          "٥",
+          "٦",
+          "التالي",
+          "٧",
+          "٨",
+          "٩",
+          "٫",
+          "٠"
+        ]
+      },
+      {
+        "label": "recalculated",
+        "probe": {
+          "customDensityValue": "7.85",
+          "customDensityRaw": null,
+          "parsed": 7.85,
+          "parsedRaw": 7.85,
+          "lang": "ar",
+          "error": "",
+          "resultsDisplay": "block"
+        },
+        "lang": "ar",
+        "dir": "rtl",
+        "title": "حاسبة وزن اللوحة | حاسبة وزن المعادن",
+        "hasMWNumber": true,
+        "inputs": [
+          {
+            "id": "length",
+            "value": "1000",
+            "raw": null,
+            "canonical": 1000
+          },
+          {
+            "id": "width",
+            "value": "100",
+            "raw": null,
+            "canonical": 100
+          },
+          {
+            "id": "thickness",
+            "value": "10",
+            "raw": null,
+            "canonical": 10
+          },
+          {
+            "id": "customDensity",
+            "value": "7.85",
+            "raw": null,
+            "canonical": 7.85
+          },
+          {
+            "id": "quantity",
+            "value": "10",
+            "raw": null,
+            "canonical": 10
+          },
+          {
+            "id": "calcMaterialComboSearch",
+            "value": "",
+            "raw": null,
+            "canonical": null
+          }
+        ],
+        "results": {
+          "densityInfo": 7.85,
+          "customDensity": 7.85,
+          "results": 78.5,
+          "singleWeight": 7.85,
+          "resultQuantity": 10,
+          "resultDensity": 7.85
+        },
+        "historyCount": 1,
+        "missing": [
+          "1 calculation saved across all calculators.",
+          "L: 1000 mm × W: 100 mm × T: 10 mm × QTY: 10",
+          "Nov 24, 2026, 08:33:42 PM",
+          "Open global calculation history, 1 calculation",
+          "QTY"
+        ],
+        "keypad": [
+          "١",
+          "٢",
+          "٣",
+          "٤",
+          "٥",
+          "٦",
+          "التالي",
+          "٧",
+          "٨",
+          "٩",
+          "٫",
+          "٠"
+        ]
+      }
+    ],
+    "checks": [
+      {
+        "name": "MWNumber available",
+        "pass": true,
+        "detail": "frontend/calculators/plate/index.html"
+      },
+      {
+        "name": "results unchanged across languages",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "name": "inputs unchanged across languages",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "name": "no missing translations",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "name": "direction correct",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "name": "keypad localized",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "name": "history stable",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "name": "language persists across navigation",
+        "pass": true,
+        "detail": "ar != ar"
+      },
+      {
+        "name": "language persists after reload",
+        "pass": true,
+        "detail": "ar != ar"
+      },
+      {
+        "name": "recalculation after reload matches",
+        "pass": true,
+        "detail": ""
+      }
+    ],
+    "errors": [],
+    "calculateTarget": "calculateBtn",
+    "viewport": "mobile"
+  }
+]
